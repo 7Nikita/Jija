@@ -1,8 +1,6 @@
-using System.ComponentModel.DataAnnotations;
-
-namespace Jija.Models 
+namespace Jija.Models.Core
 {
-    public class ProjectUser 
+    public class ProjectUser
     {
         public string ContributorId { get; set; }
 
@@ -12,5 +10,4 @@ namespace Jija.Models
 
         public Project Project { get; set; }
     }
-
 }

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Jija.Models 
+namespace Jija.Models.Core 
 {
     public class Repository 
     {

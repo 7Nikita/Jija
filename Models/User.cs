@@ -1,3 +1,4 @@
+using Jija.Models.Core;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
