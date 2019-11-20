@@ -148,3 +148,4 @@ $RECYCLE.BIN/
 bin/
 obj/Debug/
 .vscode/
+.idea/
