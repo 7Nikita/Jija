@@ -1,16 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Jija.Models.Core 
+namespace Jija.Models.Core
 {
-    public class Repository 
+    public class Repository
     {
-        public int Id {get; set;}
-        
-        [MaxLength(64), Required]
-        public string Name {get; set;}
+        public int Id { get; set; }
 
-        public string UserId {get; set;}
-        
-        public User Owner {get; set;}
+        [MaxLength(64), Required] public string Name { get; set; }
+
+        public string UserId { get; set; }
+
+        public User Owner { get; set; }
     }
 }
