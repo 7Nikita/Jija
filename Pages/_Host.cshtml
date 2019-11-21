@@ -17,6 +17,17 @@
         @(await Html.RenderComponentAsync<App>(RenderMode.ServerPrerendered))
     </app>
 
-    <script src="_framework/blazor.server.js"></script>
+    <script src="_framework/blazor.server.js" autostart="false"></script>
+    <script>
+        Blazor.start(
+            {
+                configureSignalR: function(builder) {
+                    builder.withUrl("_blazor", {accessTokenFactory: () => localStorage.getItem("token")});
+                    builder.configureLogging(2);
+                }
+            }
+        );
+    </script>
+    <script src="_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js"></script>
 </body>
 </html>
