@@ -7,7 +7,7 @@
 @inject NavigationManager NavigationManager
 
 
-<EditForm Model="@registerForm" OnValidSubmit="@HandleValidSubmit">
+<EditForm Model="@registerForm" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <div class="form-group">
@@ -33,7 +33,7 @@
     private RegisterForm registerForm = new RegisterForm();
     private List<IdentityError> errors = new List<IdentityError>();
 
-    private async Task HandleValidSubmit()
+    private async Task OnValidSubmit()
     {
         var user = new User {
             UserName=registerForm.UserName,
@@ -43,13 +43,8 @@
         var result = await UserManager.CreateAsync(user, registerForm.Password);
 
         if (result.Succeeded)
-        {
             NavigationManager.NavigateTo("account/login");
-        }
         else
-        {
-            errors.Clear();
-            errors.AddRange(result.Errors);
-        }
+            errors = new List<IdentityError>(result.Errors);
     }
 }

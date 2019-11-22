@@ -7,7 +7,7 @@
 
 @inject UserManager<User> UserManager
 @inject SignInManager<User> SignInManager
-@inject AuthStateService AuthStateService
+@inject StateChangedService StateChangedService
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 <div class="sidebar">
@@ -28,8 +28,8 @@
                         <a class="nav-link" href="/" @onclick="LogOut">Logout<span class="sr-only">(current)</span></a>
                     </Authorized>
                     <NotAuthorized>
-                        <a href="/account/register" class="nav-link">Register</a>
-                        <a href="/account/login" class="nav-link">Login</a>
+                        <a class="register-button" href="/account/register">Register</a>
+                        <a class="login-button" href="/account/login">Login</a>
                     </NotAuthorized>
                 </AuthorizeView>
             </ul>
@@ -45,8 +45,8 @@
         private async Task LogOut()
         {
             await localStorage.RemoveItemAsync("token");
-            AuthStateService.SetAuthenticationState(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()))));
-            AuthStateService.NotifyStateChanged();
+            StateChangedService.SetAuthenticationState(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()))));
+            StateChangedService.NotifyStateChanged();
         }
     }
 

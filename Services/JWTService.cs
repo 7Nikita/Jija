@@ -43,7 +43,7 @@ namespace Jija.Services
             return _claims;
         }
 
-        public async Task<string> GenerateJSONWebToken(User user)
+        public async Task<string> GenerateJWT(User user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

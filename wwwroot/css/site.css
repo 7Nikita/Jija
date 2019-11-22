@@ -147,4 +147,46 @@ app {
         /* Never collapse the sidebar for wide screens */
         display: block;
     }
+
+    .right-align{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .login-button {
+        display: flex;
+        align-items: center;
+        border: 1px solid #0079D3;
+        background-color: transparent;
+        box-shadow: none;
+        color: #0079D3;
+        margin-left: 10px;
+        border-radius: 3px;
+        font-family: "Arial";
+        font-weight: 700;
+        padding: 0 30px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 13px;
+        text-decoration: none;
+    }
+    
+    .register-button {
+        display: flex;
+        align-items: center;
+        border: 1px solid transparent;
+        background-color: #0079D3;
+        box-shadow: none;
+        color: #FFFFFF;
+        margin-left: 10px;
+        border-radius: 3px;
+        font-family: "Arial";
+        font-weight: 700;
+        padding: 0 30px;
+        height: 32px;
+        border-radius: 4px;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
 }

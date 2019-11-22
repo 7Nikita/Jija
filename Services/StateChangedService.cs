@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Components.Server;
 
 namespace Jija.Services
 {
-    public class AuthStateService : ServerAuthenticationStateProvider
+    public class StateChangedService : ServerAuthenticationStateProvider
     {
-        public AuthStateService() : base()
+        public StateChangedService() : base()
         {
         }
 

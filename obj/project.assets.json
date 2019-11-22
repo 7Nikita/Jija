@@ -4713,7 +4713,7 @@
       "outputPath": "/Users/nikita/Documents/projects/Jija/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/nikita/.nuget/NuGet/NuGet.Config"
+        "/Users/nikita/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
@@ -4779,16 +4779,7 @@
           "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

@@ -7,13 +7,13 @@
 
 @inject JWTService JWTService
 @inject UserManager<User> UserManager
-@inject AuthStateService AuthStateService
+@inject StateChangedService StateChangedService
 @inject SignInManager<User> SignInManager
 @inject NavigationManager NavigationManager
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 
-<EditForm Model="@loginForm" OnValidSubmit="@HandleValidSubmit">
+<EditForm Model="@loginForm" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <div class="form-group">
@@ -33,30 +33,34 @@
     private LoginForm loginForm = new LoginForm();
     private string errorMessage;
 
-    private async Task HandleValidSubmit()
+    private async Task OnValidSubmit()
     {
         var user = await UserManager.FindByNameAsync(loginForm.UserName);
-        if(user != null)
+        if(!(user is null))
         {
-            var correct = await UserManager.CheckPasswordAsync(user, loginForm.Password);
-            if(correct)
+            if(await UserManager.CheckPasswordAsync(user, loginForm.Password))
             {
-                var token = await JWTService.GenerateJSONWebToken(user);
-                await localStorage.SetItemAsync("token", token);
-                var identity = new ClaimsIdentity(await JWTService.GetClaims(user), "Base Authentication");
-                var principal = new ClaimsPrincipal(identity);
-                AuthStateService.SetAuthenticationState(Task.FromResult(new AuthenticationState(principal)));
-                AuthStateService.NotifyStateChanged();
+                await SetJWT(user);
                 NavigationManager.NavigateTo("");
             }
             else
             {
-                errorMessage = "Incorrect password!";
+                errorMessage = "Incorrect password.";
             }
         }
         else
         {
-            errorMessage = "Incorrect username!";
+            errorMessage = "Incorrect username.";
         }
+    }
+
+    private async Task SetJWT(User user)
+    {
+        var token = await JWTService.GenerateJWT(user);
+        await localStorage.SetItemAsync("token", token);
+        var identity = new ClaimsIdentity(await JWTService.GetClaims(user), "Base Authentication");
+        var principal = new ClaimsPrincipal(identity);
+        StateChangedService.SetAuthenticationState(Task.FromResult(new AuthenticationState(principal)));
+        StateChangedService.NotifyStateChanged();
     }
 }

@@ -39,7 +39,16 @@ namespace Jija
             services.AddDbContext<DatabaseContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<User, Role>(SetIdentityOptions).AddEntityFrameworkStores<DatabaseContext>();
+            services.AddIdentity<User, Role>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 3;
+                options.ClaimsIdentity.UserIdClaimType = JwtRegisteredClaimNames.Sub;
+            }).AddEntityFrameworkStores<DatabaseContext>();
 
             services.AddAuthentication(options =>
             {
@@ -79,9 +88,9 @@ namespace Jija
             services.AddBlazoredLocalStorage();
 
             services.AddScoped<JWTService>();
-            services.AddScoped<AuthStateService>();
-            services.AddScoped<AuthenticationStateProvider, AuthStateService>(provider =>
-                provider.GetRequiredService<AuthStateService>());
+            services.AddScoped<StateChangedService>();
+            services.AddScoped<AuthenticationStateProvider, StateChangedService>(provider =>
+                provider.GetRequiredService<StateChangedService>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -111,17 +120,6 @@ namespace Jija
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
-        }
-
-        private static void SetIdentityOptions(IdentityOptions options)
-        {
-            options.Password.RequireDigit = true;
-            options.Password.RequireLowercase = true;
-            options.Password.RequireNonAlphanumeric = false;
-            options.Password.RequireUppercase = false;
-            options.Password.RequiredLength = 6;
-            options.Password.RequiredUniqueChars = 3;
-            options.ClaimsIdentity.UserIdClaimType = JwtRegisteredClaimNames.Sub;
         }
     }
 }
