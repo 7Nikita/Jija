@@ -20,6 +20,7 @@
 
     <ItemGroup>
       <Compile Remove="Services\RevalidatingAuthStateProvider.cs" />
+      <Compile Remove="Models\Github.cs" />
     </ItemGroup>
 
 </Project>

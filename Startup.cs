@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -20,6 +21,7 @@ using Microsoft.EntityFrameworkCore;
 using Blazored.LocalStorage;
 using Jija.Models;
 using Jija.Services;
+using Jija.Services.Github;
 
 namespace Jija
 {
@@ -86,6 +88,11 @@ namespace Jija
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddBlazoredLocalStorage();
+            
+            services.AddScoped<HttpClient>();
+            
+            services.AddScoped<GithubClient>();
+            services.AddScoped<GithubService>();
 
             services.AddScoped<JWTService>();
             services.AddScoped<StateChangedService>();

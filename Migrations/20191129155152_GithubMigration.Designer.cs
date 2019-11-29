@@ -3,15 +3,17 @@ using System;
 using Jija.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Jija.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20191129155152_GithubMigration")]
+    partial class GithubMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,8 +129,7 @@ namespace Jija.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("GithubUsers");
                 });
@@ -372,8 +373,8 @@ namespace Jija.Migrations
             modelBuilder.Entity("Jija.Models.Github.GithubUser", b =>
                 {
                     b.HasOne("Jija.Models.User", "User")
-                        .WithOne("GithubUser")
-                        .HasForeignKey("Jija.Models.Github.GithubUser", "UserId");
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
