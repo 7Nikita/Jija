@@ -2,6 +2,7 @@ using Jija.Models.Core;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using Jija.Models.Github;
 
 namespace Jija.Models
 {
@@ -18,5 +19,8 @@ namespace Jija.Models
         public List<Repository> Repositories { get; set; }
 
         public List<ProjectUser> ContributedProjects { get; set; }
+        
+        public GithubUser GithubUser { get; set; }
+
     }
 }
