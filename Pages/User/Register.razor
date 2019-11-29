@@ -1,9 +1,11 @@
 @page "/account/register"
 
 @using Jija.Models
+@using Jija.Models.Github
 @using Microsoft.AspNetCore.Identity
 
 @inject UserManager<User> UserManager
+@inject DatabaseContext DatabaseContext
 @inject NavigationManager NavigationManager
 
 
@@ -43,8 +45,16 @@
         var result = await UserManager.CreateAsync(user, registerForm.Password);
 
         if (result.Succeeded)
+        {
+            var githubUser = new GithubUser {User = user};
+
+            await DatabaseContext.GithubUsers.AddAsync(githubUser);
+            await DatabaseContext.SaveChangesAsync();
+            
             NavigationManager.NavigateTo("account/login");
-        else
+        }
+        
+    else
             errors = new List<IdentityError>(result.Errors);
     }
 }

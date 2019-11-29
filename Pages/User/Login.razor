@@ -41,7 +41,7 @@
             if(await UserManager.CheckPasswordAsync(user, loginForm.Password))
             {
                 await SetJWT(user);
-                NavigationManager.NavigateTo("");
+                NavigationManager.NavigateTo("/account/profile");
             }
             else
             {
