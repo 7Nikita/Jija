@@ -1,0 +1,124 @@
+@page "/account/profile"
+@attribute [Authorize]
+
+@using Microsoft.EntityFrameworkCore;
+@using Jija.Models;
+@using Jija.Models.Core;
+@using Jija.Models.Github;
+@using Jija.Services
+@using Jija.Services.Github;
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@inject UserManager<User> UserManager
+@inject StateChangedService StateChangedService
+@inject GithubService GithubService
+@inject NavigationManager NavigationManager
+@inject JWTService JWTService
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject DatabaseContext DatabaseContext
+
+<h1>profile</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-3 p-3" align="center">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@userName</h5>
+                    <p class="card-text">@userEmail</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 p-3" align="center">
+            Main Part
+        </div>
+        <div class="col-12 col-md-3 p-3" align="center">
+            @if(githubToken != null)
+            {
+                <img src="@githubAvatarUrl">
+                <p>Your GitHub Token: @githubToken</p>
+                <p>Your GitHub Login: @githubLogin</p>
+            }
+            else
+            {
+                <a class="btn btn-primary" href=@githubOauthUrl>
+                    Get your GitHub Token
+                </a>
+            }
+            <p>@errorMessage</p>
+        </div>
+    </div>
+</div>
+
+
+@code
+{
+    private User user;
+
+    private string githubToken;
+    private string githubOauthUrl;
+    private string errorMessage;
+    private string userName;
+    private string userEmail;
+    
+    private string githubAvatarUrl;
+    private string githubHtmlUrl;
+    private string githubLogin;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await StateChangedService.GetAuthenticationStateAsync();
+        user = DatabaseContext.Users
+            .Include(u => u.GithubUser)
+            .Where(u => u.UserName == authState.User.Identity.Name)
+            .Select(u => u)
+            .SingleOrDefault();
+        
+        userName = user.UserName;
+        userEmail = user.Email;
+        
+        githubToken = user.GithubUser.AccessToken;
+        githubAvatarUrl = user.GithubUser.AvatarUrl;
+        githubLogin = user.GithubUser.Login;
+        githubHtmlUrl = user.GithubUser.HtmlUrl;
+        
+        githubOauthUrl = GithubService.GetOauthRequestUrl();
+
+        var uriBuilder = new UriBuilder(NavigationManager.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
+        if(query["code"] != null)
+        {
+            await GetGithubToken(query["code"]);
+        }
+    }
+    
+    private async Task GetGithubToken(string code)
+    {
+        var result = await GithubService.SetOauthToken(code, user);
+        if(result.ErrorMessage != null)
+        {
+            errorMessage = result.ErrorMessage;
+        }
+        else
+        {
+            githubToken = result.Response.access_token;
+            await GetGithubUserInfo(githubToken);
+        }
+        StateHasChanged();
+    }
+    
+    private async Task GetGithubUserInfo(string token)
+    {
+        var setUserInfoResult = await GithubService.SetGithubUserInfo(user);
+        if(setUserInfoResult.ErrorMessage != null)
+        {
+            errorMessage = setUserInfoResult.ErrorMessage;
+        }
+        else 
+        {
+            githubAvatarUrl = setUserInfoResult.Response.avatar_url;
+            githubHtmlUrl = setUserInfoResult.Response.html_url;
+            githubLogin = setUserInfoResult.Response.login;
+        }
+    }
+}

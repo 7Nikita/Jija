@@ -15,7 +15,7 @@
 </div>
 
 <div class="main">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="justify-content: flex-end;">
+    <nav class="navbar topline">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,12 +23,12 @@
         <div class="row" id="navbarSupportedContent">
                 <AuthorizeView>
                     <Authorized>
-                        <a class="nav-link" href="/">@context.User.Identity.Name<span class="sr-only">(current)</span></a>
-                        <a class="nav-link" href="/" @onclick="LogOut">Logout<span class="sr-only">(current)</span></a>
+                        <a class="std-button" href="/account/profile">@context.User.Identity.Name<span class="sr-only">(current)</span></a>
+                        <a class="std-button" href="/" @onclick="LogOut">Sign Out<span class="sr-only">(current)</span></a>
                     </Authorized>
                     <NotAuthorized>
-                        <a class="register-button" href="/account/register">Register</a>
-                        <a class="login-button" href="/account/login">Login</a>
+                        <a class="std-button" href="/account/login">Sign In</a>
+                        <a class="register-button" href="/account/register">Sign Up</a>
                     </NotAuthorized>
                 </AuthorizeView>
         </div>

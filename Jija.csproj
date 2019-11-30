@@ -19,8 +19,12 @@
   </ItemGroup>
 
     <ItemGroup>
-      <Compile Remove="Services\RevalidatingAuthStateProvider.cs" />
-      <Compile Remove="Models\Github.cs" />
+      <_ContentIncludedByDefault Remove="TestJija\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="TestJija\obj\TestJija.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="TestJija\bin\Debug\netcoreapp3.0\TestJija.deps.json" />
+      <_ContentIncludedByDefault Remove="TestJija\bin\Debug\netcoreapp3.0\TestJija.runtimeconfig.dev.json" />
+      <_ContentIncludedByDefault Remove="TestJija\bin\Debug\netcoreapp3.0\TestJija.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="TestJija\obj\project.assets.json" />
     </ItemGroup>
 
 </Project>
