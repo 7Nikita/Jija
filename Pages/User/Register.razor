@@ -9,20 +9,30 @@
 @inject NavigationManager NavigationManager
 
 
-<EditForm Model="@registerForm" OnValidSubmit="@OnValidSubmit">
+
+ 
+<div class="register">
+    <div class="login_header">
+        <h1>Create your account</h1>
+    </div>
+    <EditForm Model="@registerForm" OnValidSubmit="@OnValidSubmit" class="login_border">
     <DataAnnotationsValidator />
     <ValidationSummary />
-    <div class="form-group">
-        <InputText class="form-control" id="inputUserName" placeholder="username" @bind-Value="registerForm.UserName" />
-    </div>
-    <div class="form-group">
-        <InputText class="form-control" id="inputEmail" placeholder="e-mail" @bind-Value="registerForm.Email" />
-    </div>
-    <div class="form-group">
-        <InputText type="password" class="form-control" id="inputPassword" placeholder="password" @bind-Value="registerForm.Password" />
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-</EditForm>
+        <label class="login_text">Username</label>
+        <div class="form-group">
+            <InputText class="form-control" id="inputUserName" placeholder="username" @bind-Value="registerForm.UserName" />
+        </div>
+        <label class="login_text">Email</label>
+        <div class="form-group">
+            <InputText class="form-control" id="inputEmail" placeholder="e-mail" @bind-Value="registerForm.Email" />
+        </div>
+        <label class="login_text">Password</label>
+        <div class="form-group">
+            <InputText type="password" class="form-control" id="inputPassword" placeholder="password" @bind-Value="registerForm.Password" />
+        </div>
+        <button type="submit" class="btn btn-success" style="width: 100%;">Register</button>
+    </EditForm>
+</div>
 
 <div class="mt-3">
     @foreach (var error in errors)
