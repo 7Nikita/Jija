@@ -74,10 +74,10 @@ namespace Jija.Services.Github
 
             request.Headers.Add("Accept", "application/json");
             request.Headers.Add("Authorization", $"token {Token}");
-            request.Headers.Add("User-Agent", "Hephaestus App");
+            request.Headers.Add("User-Agent", "Jija");
 
             var response = await MakeRequest(request);
-            if (string.IsNullOrEmpty(response.ErrorMessage))
+            if (!string.IsNullOrEmpty(response.ErrorMessage))
             {
                 throw new HttpRequestException(response.ErrorMessage);
             }
