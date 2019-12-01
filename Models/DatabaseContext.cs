@@ -1,3 +1,4 @@
+using Jija.Models.Account;
 using Jija.Models.Core;
 using Jija.Models.Github;
 using Microsoft.EntityFrameworkCore;

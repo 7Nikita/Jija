@@ -1,10 +1,10 @@
-using Jija.Models.Core;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using Jija.Models.Core;
 using Jija.Models.Github;
+using Microsoft.AspNetCore.Identity;
 
-namespace Jija.Models
+namespace Jija.Models.Account
 {
     public class User : IdentityUser
     {

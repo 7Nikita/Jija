@@ -1,3 +1,5 @@
+using Jija.Models.Account;
+
 namespace Jija.Models.Github
 {
     public class GithubUser

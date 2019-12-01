@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Jija.Models.Account;
 
 namespace Jija.Models.Core
 {

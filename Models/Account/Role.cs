@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace Jija.Models
+namespace Jija.Models.Account
 {
     public class Role : IdentityRole
     {

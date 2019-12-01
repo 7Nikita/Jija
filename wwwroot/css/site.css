@@ -234,5 +234,74 @@ app {
         width: 500px;
         margin: 0 auto;
     }
+
+    .underline_nav {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-bottom: 1px solid #e1e4e8;
+        justify-content: space-between;
+    }
+
+    .nav_item {
+        padding: 16px 8px;
+        margin-right: 4px !important;
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav_item_active {
+        font-weight: 600;
+        color: #24292e;
+        border-bottom-color: #e36209;
+    }
+
+    .nav_item:hover {
+        color: #24292e;
+        text-decoration: none;
+        border-bottom-color: #d1d5da;
+        transition: .2s ease;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .list_item__title {
+        color: #0366d6 !important;
+        text-decoration: none;
+    }
+
+    .list_item__description {
+        color: #586069 !important;
+        margin-top: -10px;
+        padding-right: 24px !important;
+        margin-bottom: 8px !important;
+        font-size: 14px;
+    }
+
+    .avatar {
+        border: 1px solid #e1e4e8;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .card-fullname {
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 30px;
+        color: #24292e;
+        display: block !important;
+    }
+
+    .card-std-text {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+        color: #666;
+        display: block !important;
+    }
     
 }

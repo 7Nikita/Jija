@@ -70,12 +70,7 @@ namespace Jija.Services.Github
 
         public async Task<UserInfoDTO> GetUserInfo()
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, $"{ApiUrl}/user");
-
-            request.Headers.Add("Accept", "application/json");
-            request.Headers.Add("Authorization", $"token {Token}");
-            request.Headers.Add("User-Agent", "Jija");
-
+            var request = CreateRequestTo($"{ApiUrl}/user");
             var response = await MakeRequest(request);
             if (!string.IsNullOrEmpty(response.ErrorMessage))
             {
@@ -84,5 +79,28 @@ namespace Jija.Services.Github
 
             return await JsonSerializer.DeserializeAsync<UserInfoDTO>(response.Response);
         }
+
+        public async Task<List<RepositoryInfoDTO>> GetRepos()
+        {
+            var request = CreateRequestTo($"{ApiUrl}/user/repos");
+            var response = await MakeRequest(request);
+            if (!string.IsNullOrEmpty(response.ErrorMessage))
+            {
+                throw new HttpRequestException(response.ErrorMessage);
+            }
+
+            return await JsonSerializer.DeserializeAsync<List<RepositoryInfoDTO>>(response.Response);
+        }
+
+        private HttpRequestMessage CreateRequestTo(string url)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
+            
+            request.Headers.Add("Accept", "application/json");
+            request.Headers.Add("Authorization", $"token {Token}");
+            request.Headers.Add("User-Agent", "Jija");
+
+            return request;
+        } 
     }
 }

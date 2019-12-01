@@ -77,5 +77,35 @@ namespace JijaTest.Services.Github
             Assert.AreEqual("7Nikita", userInfo.login);
             Assert.AreEqual("https://github.com/7Nikita", userInfo.html_url);
         }
+
+        [Test]
+        public async Task TestGetRepos()
+        {
+            const string reposResp = "[{\"id\": 221949625," +
+                                     "\"name\": \"Jija\"," +
+                                     "\"html_url\": \"https://github.com/7Nikita/Jija\"," +
+                                     "\"owner\": {" +
+                                     "\"login\": \"7Nikita\"," +
+                                     "\"avatar_url\": \"https://avatars1.githubusercontent.com/u/20500960?v=4\"," +
+                                     "\"html_url\": \"https://github.com/7Nikita\"" +
+                                     "}}" +
+                                     "]";
+            
+            _server.Given(Request.Create()
+                    .WithPath("/user/repos")
+                    .UsingGet()
+                )
+                .RespondWith(Response.Create()
+                    .WithStatusCode(250)
+                    .WithBody(reposResp)
+                );
+            
+            _client = new GithubClient(_config, _httpClient) {Token = "testToken", ApiUrl = _server.Urls[0]};
+
+            var reposInfo = await _client.GetRepos();
+            
+            Assert.AreEqual(1, reposInfo.Count);
+            Assert.AreEqual("7Nikita", reposInfo[0].owner.login);
+        }
     }
 }

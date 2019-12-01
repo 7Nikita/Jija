@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Jija.Models;
+using Jija.Models.Account;
 using Jija.Models.Github;
 using Microsoft.Extensions.Configuration;
 
@@ -34,7 +36,7 @@ namespace Jija.Services.Github
 
         public string GetOauthRequestUrl() => _oauthUrl;
         
-        public async Task<OauthTokenResultDTO> SetOauthToken(string code, User user)
+        public async Task<ResultDTO<OauthTokenDTO>> SetOauthToken(string code, User user)
         {
             try
             {
@@ -44,15 +46,15 @@ namespace Jija.Services.Github
                 
                 await _dbContext.SaveChangesAsync();
                 
-                return new OauthTokenResultDTO(response);
+                return new ResultDTO<OauthTokenDTO>(response);
             }
             catch (HttpRequestException e)
             {
-                return new OauthTokenResultDTO(e.Message);
+                return new ResultDTO<OauthTokenDTO>(e.Message);
             }
         }
 
-        public async Task<UserInfoResultDTO> SetGithubUserInfo(User user)
+        public async Task<ResultDTO<UserInfoDTO>> SetGithubUserInfo(User user)
         {
             
             try
@@ -66,11 +68,24 @@ namespace Jija.Services.Github
                 user.GithubUser.AvatarUrl = response.avatar_url;
 
                 await _dbContext.SaveChangesAsync();
-                return new UserInfoResultDTO(response);
+                return new ResultDTO<UserInfoDTO>(response);
             }
             catch (HttpRequestException e)
             {
-                return new UserInfoResultDTO(e.Message);
+                return new ResultDTO<UserInfoDTO>(e.Message);
+            }
+        }
+
+        public async Task<ResultDTO<List<RepositoryInfoDTO>>> GetUserRepositories(User user)
+        {
+            try
+            {
+                _client.Token = user.GithubUser.AccessToken;
+                return new ResultDTO<List<RepositoryInfoDTO>>(await _client.GetRepos());
+            }
+            catch (HttpRequestException e)
+            {
+                return new ResultDTO<List<RepositoryInfoDTO>>(e.Message);
             }
         }
     }

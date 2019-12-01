@@ -1,86 +1,105 @@
 @page "/account/profile"
+
 @attribute [Authorize]
 
-@using Microsoft.EntityFrameworkCore;
-@using Jija.Models;
-@using Jija.Models.Core;
-@using Jija.Models.Github;
+@using Jija.Models
+@using Jija.Models.Account
+@using Jija.Models.Github
 @using Jija.Services
 @using Jija.Services.Github;
+@using Microsoft.EntityFrameworkCore
 @using Microsoft.AspNetCore.Identity
-@using System.Security.Claims
-@inject UserManager<User> UserManager
-@inject StateChangedService StateChangedService
-@inject GithubService GithubService
-@inject NavigationManager NavigationManager
+
 @inject JWTService JWTService
-@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject GithubService GithubService
+@inject UserManager<User> UserManager
 @inject DatabaseContext DatabaseContext
+@inject NavigationManager NavigationManager
+@inject StateChangedService StateChangedService
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
-<h1>profile</h1>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-3 p-3" align="center">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">@userName</h5>
-                    <p class="card-text">@userEmail</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 p-3" align="center">
-            Main Part
-        </div>
-        <div class="col-12 col-md-3 p-3" align="center">
-            @if(githubToken != null)
+ <div class="d-flex">
+            @if(githubToken == null)
             {
-                <img src="@githubAvatarUrl">
-                <p>Your GitHub Token: @githubToken</p>
-                <p>Your GitHub Login: @githubLogin</p>
+                <div style="margin: 0 auto;">
+                    <a class="btn btn-primary " href=@githubOauthUrl>
+                           Sign in with Github
+                    </a>
+                </div>
+                
             }
             else
             {
-                <a class="btn btn-primary" href=@githubOauthUrl>
-                    Get your GitHub Token
-                </a>
-            }
-            <p>@errorMessage</p>
-        </div>
-    </div>
-</div>
+                <div class="p-2 pr-xl-6" style="padding-right: 40px !important;">
+                    <div>
+                        <img class="avatar" src=@githubAvatarUrl width="260" height="260"/>
+                    </div>
+                    <div class="pt-3">
+                        <span class="card-fullname">@userName</span>
+                        <span class="card-std-text">@githubLogin</span>
+                        <span class="card-std-text">@userEmail</span>
+                    </div>
+                </div>
 
+                <div class="p-2" style="flex:1;">
+                    <div class="underline_nav">
+                        <nav class="d-flex">
+                            <a class="nav_item nav_item_active">
+                                Repositories
+                            </a>
+                            <a class="nav_item">
+                                Projects
+                            </a>
+                        </nav>
+                    </div>
+
+                    <ul class="list-group">
+                        @if (repos.Count > 0)
+                        {
+                            @foreach (var item in repos)
+                            {
+                                <li class="border-bottom py-4">
+                                    <div>
+                                        <h3><a class="list_item__title" href=@item.html_url>@item.name</a></h3>
+                                    </div>
+    
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            }
+    </div>
 
 @code
 {
-    private User user;
-
+    private User _user;
     private string githubToken;
     private string githubOauthUrl;
-    private string errorMessage;
     private string userName;
     private string userEmail;
     
     private string githubAvatarUrl;
-    private string githubHtmlUrl;
     private string githubLogin;
-
+    
+    private List<RepositoryInfoDTO> repos = new List<RepositoryInfoDTO>();
+    
     protected override async Task OnInitializedAsync()
     {
         var authState = await StateChangedService.GetAuthenticationStateAsync();
-        user = DatabaseContext.Users
+        
+        _user = DatabaseContext.Users
             .Include(u => u.GithubUser)
             .Where(u => u.UserName == authState.User.Identity.Name)
             .Select(u => u)
             .SingleOrDefault();
         
-        userName = user.UserName;
-        userEmail = user.Email;
+        userName = _user.UserName;
+        userEmail = _user.Email;
         
-        githubToken = user.GithubUser.AccessToken;
-        githubAvatarUrl = user.GithubUser.AvatarUrl;
-        githubLogin = user.GithubUser.Login;
-        githubHtmlUrl = user.GithubUser.HtmlUrl;
+        githubToken = _user.GithubUser.AccessToken;
+        githubAvatarUrl = _user.GithubUser.AvatarUrl;
+        githubLogin = _user.GithubUser.Login;
         
         githubOauthUrl = GithubService.GetOauthRequestUrl();
 
@@ -90,16 +109,13 @@
         {
             await GetGithubToken(query["code"]);
         }
+        await GetGithubRepos();
     }
-    
+
     private async Task GetGithubToken(string code)
     {
-        var result = await GithubService.SetOauthToken(code, user);
-        if(result.ErrorMessage != null)
-        {
-            errorMessage = result.ErrorMessage;
-        }
-        else
+        var result = await GithubService.SetOauthToken(code, _user);
+        if(string.IsNullOrEmpty(result.ErrorMessage))
         {
             githubToken = result.Response.access_token;
             await GetGithubUserInfo(githubToken);
@@ -109,16 +125,20 @@
     
     private async Task GetGithubUserInfo(string token)
     {
-        var setUserInfoResult = await GithubService.SetGithubUserInfo(user);
-        if(setUserInfoResult.ErrorMessage != null)
-        {
-            errorMessage = setUserInfoResult.ErrorMessage;
-        }
-        else 
+        var setUserInfoResult = await GithubService.SetGithubUserInfo(_user);
+        if(string.IsNullOrEmpty(setUserInfoResult.ErrorMessage))
         {
             githubAvatarUrl = setUserInfoResult.Response.avatar_url;
-            githubHtmlUrl = setUserInfoResult.Response.html_url;
             githubLogin = setUserInfoResult.Response.login;
+        }
+    }
+
+    private async Task GetGithubRepos()
+    {
+        var reposResult = await GithubService.GetUserRepositories(_user);
+        if (string.IsNullOrEmpty(reposResult.ErrorMessage))
+        {
+            repos = reposResult.Response;
         }
     }
 }

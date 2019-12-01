@@ -20,6 +20,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Blazored.LocalStorage;
 using Jija.Models;
+using Jija.Models.Account;
 using Jija.Services;
 using Jija.Services.Github;
 
