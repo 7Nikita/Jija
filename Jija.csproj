@@ -25,6 +25,28 @@
       <_ContentIncludedByDefault Remove="TestJija\bin\Debug\netcoreapp3.0\TestJija.runtimeconfig.dev.json" />
       <_ContentIncludedByDefault Remove="TestJija\bin\Debug\netcoreapp3.0\TestJija.runtimeconfig.json" />
       <_ContentIncludedByDefault Remove="TestJija\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Test\Testjija\bin\Debug\netcoreapp3.0\Testjija.deps.json" />
+      <_ContentIncludedByDefault Remove="Test\Testjija\bin\Debug\netcoreapp3.0\Testjija.runtimeconfig.dev.json" />
+      <_ContentIncludedByDefault Remove="Test\Testjija\bin\Debug\netcoreapp3.0\Testjija.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="Test\Testjija\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Test\Testjija\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Test\Testjija\obj\Testjija.csproj.nuget.dgspec.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Test\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Test\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Test\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Test\**" />
     </ItemGroup>
 
 </Project>

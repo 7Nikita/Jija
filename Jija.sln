@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jija", "Jija.csproj", "{46481F8E-D903-449A-BC67-958F79CE2F1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JijaTest", "Test\JijaTest\JijaTest.csproj", "{1088A382-7FA2-4C46-B91D-AC5FF912EF5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{46481F8E-D903-449A-BC67-958F79CE2F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46481F8E-D903-449A-BC67-958F79CE2F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46481F8E-D903-449A-BC67-958F79CE2F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1088A382-7FA2-4C46-B91D-AC5FF912EF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1088A382-7FA2-4C46-B91D-AC5FF912EF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1088A382-7FA2-4C46-B91D-AC5FF912EF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1088A382-7FA2-4C46-B91D-AC5FF912EF5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

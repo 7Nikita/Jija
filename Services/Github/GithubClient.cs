@@ -16,8 +16,8 @@ namespace Jija.Services.Github
         private readonly IConfiguration _configuration;
 
         public string Token { get; set; }
-        public const string ApiUrl = "https://api.github.com";
-        public const string OauthUrl = "https://github.com/login/oauth/access_token";
+        public string ApiUrl = "https://api.github.com";
+        public string OauthUrl = "https://github.com/login/oauth/access_token";
 
 
         public GithubClient(IConfiguration configuration, HttpClient httpClient)
