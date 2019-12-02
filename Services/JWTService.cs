@@ -54,7 +54,8 @@ namespace Jija.Services
                 _configuration["JWT:Issuer"],
                 await GetClaims(user),
                 expires: DateTime.Now.AddDays(365),
-                signingCredentials: credentials);
+                signingCredentials: credentials
+            );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
