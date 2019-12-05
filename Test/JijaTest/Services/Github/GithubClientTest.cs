@@ -90,7 +90,7 @@ namespace JijaTest.Services.Github
                                      "\"html_url\": \"https://github.com/7Nikita\"" +
                                      "}}" +
                                      "]";
-            
+
             _server.Given(Request.Create()
                     .WithPath("/user/repos")
                     .UsingGet()
@@ -99,11 +99,11 @@ namespace JijaTest.Services.Github
                     .WithStatusCode(250)
                     .WithBody(reposResp)
                 );
-            
+
             _client = new GithubClient(_config, _httpClient) {Token = "testToken", ApiUrl = _server.Urls[0]};
 
             var reposInfo = await _client.GetRepos();
-            
+
             Assert.AreEqual(1, reposInfo.Count);
             Assert.AreEqual("7Nikita", reposInfo[0].owner.login);
         }
