@@ -145,6 +145,9 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 
+# settings
+appsettings.json
+
 bin/
 obj/Debug/
 .vscode/
