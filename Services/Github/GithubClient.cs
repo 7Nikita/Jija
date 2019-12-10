@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Text.Json;
 using Jija.Models.Github;
@@ -10,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Jija.Services.Github
 {
-    public class GithubClient
+    public class GithubClient : IGithubClient
     {
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
@@ -19,14 +16,13 @@ namespace Jija.Services.Github
         public string ApiUrl = "https://api.github.com";
         public string OauthUrl = "https://github.com/login/oauth/access_token";
 
-
         public GithubClient(IConfiguration configuration, HttpClient httpClient)
         {
             _configuration = configuration;
             _httpClient = httpClient;
         }
 
-        private async Task<HttpResponse> MakeRequest(HttpRequestMessage requestMessage)
+        public async Task<HttpResponse> MakeRequest(HttpRequestMessage requestMessage)
         {
             try
             {

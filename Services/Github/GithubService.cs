@@ -9,9 +9,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Jija.Services.Github
 {
-    public class GithubService
+    public class GithubService : IGithubService
     {
-        private GithubClient _client;
+        private IGithubClient _client;
         private DatabaseContext _dbContext;
 
         private readonly string _oauthUrl;
@@ -21,7 +21,7 @@ namespace Jija.Services.Github
 
         private const string OauthRequestUrl = "https://github.com/login/oauth/" ;
 
-        public GithubService(IConfiguration configuration, GithubClient client, DatabaseContext databaseContext)
+        public GithubService(IConfiguration configuration, IGithubClient client, DatabaseContext databaseContext)
         {
             _client = client;
             _dbContext = databaseContext;

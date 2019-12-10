@@ -1,21 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Blazored.LocalStorage;
@@ -23,6 +17,7 @@ using Jija.Models;
 using Jija.Models.Account;
 using Jija.Services;
 using Jija.Services.Github;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Jija
 {
@@ -91,9 +86,13 @@ namespace Jija
             services.AddBlazoredLocalStorage();
             
             services.AddScoped<HttpClient>();
+
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Latest)
+                .AddGitHubWebHooks();
             
-            services.AddScoped<GithubClient>();
-            services.AddScoped<GithubService>();
+            services.AddScoped<IGithubClient, GithubClient>();
+            services.AddScoped<IGithubService, GithubService>();
 
             services.AddScoped<JWTService>();
             services.AddScoped<StateChangedService>();
