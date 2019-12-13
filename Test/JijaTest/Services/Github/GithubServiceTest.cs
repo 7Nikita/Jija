@@ -64,7 +64,6 @@ namespace JijaTest.Services.Github
                     access_token = "345"
                 });
 
-            _dbContext.Users.ForEach(i => TestContext.WriteLine(i.UserName));
             var fakeUser = _dbContext.Users.FirstOrDefault(user => user.UserName == "Mario");
 
             var service = new GithubService(Mocks.GetConfiguration(), _githubClient.Object, _dbContext);

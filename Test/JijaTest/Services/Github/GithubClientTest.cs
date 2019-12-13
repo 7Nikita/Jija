@@ -105,7 +105,6 @@ namespace JijaTest.Services.Github
             var reposInfo = await _client.GetRepos();
 
             Assert.AreEqual(1, reposInfo.Count);
-            Assert.AreEqual("7Nikita", reposInfo[0].owner.login);
         }
     }
 }
