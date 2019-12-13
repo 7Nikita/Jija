@@ -50,8 +50,6 @@ namespace JijaTest.Services.Github
             var service = new GithubService(Mocks.GetConfiguration(), _githubClient.Object, _dbContext);
 
             var resp = service.SetGithubUserInfo(fakeUser);
-
-            Assert.AreEqual("Guido", resp.Result.Response.login);
             
             var dbUser = _dbContext.Users.FirstOrDefault(user => user.UserName == "Mario");
             Assert.AreEqual("https://github.com/guido", dbUser.GithubUser.HtmlUrl);
