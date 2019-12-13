@@ -93,11 +93,13 @@ namespace Jija
             
             services.AddScoped<IGithubClient, GithubClient>();
             services.AddScoped<IGithubService, GithubService>();
+            services.AddScoped<RepoService>();
+            services.AddScoped<ProjectService>();
 
             services.AddScoped<JWTService>();
-            services.AddScoped<StateChangedService>();
-            services.AddScoped<AuthenticationStateProvider, StateChangedService>(provider =>
-                provider.GetRequiredService<StateChangedService>());
+            services.AddScoped<DbService>();
+            services.AddScoped<AuthenticationStateProvider, DbService>(provider =>
+                provider.GetRequiredService<DbService>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

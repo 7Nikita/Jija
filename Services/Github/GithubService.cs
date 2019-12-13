@@ -81,6 +81,7 @@ namespace Jija.Services.Github
             try
             {
                 _client.Token = user.GithubUser.AccessToken;
+                var resp = await _client.GetRepos();
                 return new ResultDTO<List<RepositoryInfoDTO>>(await _client.GetRepos());
             }
             catch (HttpRequestException e)
