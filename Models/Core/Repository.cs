@@ -11,6 +11,14 @@ namespace Jija.Models.Core
 
         public string UserId { get; set; }
 
+        public string Description { get; set; }
+        
+        public string HtmlUrl { get; set; }
+        
         public User Owner { get; set; }
+        
+        public int? ProjectId { get; set; }
+        
+        public Project Project { get; set; }
     }
 }

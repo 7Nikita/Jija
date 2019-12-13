@@ -12,6 +12,9 @@ namespace Jija.Models
         public DbSet<Repository> Repositories { get; set; }
         public DbSet<Invite> Invites { get; set; }
         public DbSet<GithubUser> GithubUsers { get; set; }
+        public DbSet<ProjectUser> ProjectUsers { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<Assignee> Assignees { get; set; }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
@@ -30,8 +33,15 @@ namespace Jija.Models
 
             builder.Entity<ProjectUser>()
                 .HasOne(projectUser => projectUser.Project)
-                .WithMany(project => project.Contibutors)
+                .WithMany(project => project.Contributors)
                 .HasForeignKey(projectUser => projectUser.ProjectId);
+
+            builder.Entity<Assignee>().HasKey(asg => new {asg.AssigneeId, asg.TicketId});
+
+            builder.Entity<Assignee>()
+                .HasOne(asg => asg.Ticket)
+                .WithMany(ticket => ticket.Assignees)
+                .HasForeignKey(asg => asg.TicketId);
         }
     }
 }

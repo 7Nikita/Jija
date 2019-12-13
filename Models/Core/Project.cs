@@ -17,6 +17,11 @@ namespace Jija.Models.Core
 
         [InverseProperty("Project")] public List<Invite> Invites { get; set; }
 
-        public List<ProjectUser> Contibutors { get; set; }
+        public List<ProjectUser> Contributors { get; set; }
+        
+        public Repository Repository { get; set; }
+        
+        [InverseProperty("Project")]
+        public List<Ticket> Tickets { get; set; }
     }
 }
