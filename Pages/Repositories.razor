@@ -12,78 +12,56 @@
 @inject RepoService RepoService
 @inject IGithubService GithubService
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-3 p-3" align="center">
-            <h3>Added Repositories</h3>
-            @if(addedRepos == null) 
-            {
-                <p>Loading ...</p>
-            }
-            else if(repos.Count == 0)
-            {
-                <p>It seems like you haven`t added any repositories yet.</p>
-            }
-            else
-            {
-                @foreach(var repository in addedRepos)
-                {
-                    <div class="card mt-3" style="width: 24rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">@repository.Name</h5>
-                            <p class="card-text">@repository.Description</p>
-                            <a class="btn btn-primary" href="@repository.HtmlUrl">View on Github</a>
-                            <p>
-                                <button class="btn btn-danger mt-3" @onclick="@(async e => await DeleteRepository(repository))">Delete Repository</button>
-                            </p>
-                        </div>
-                    </div>
-                }
-            }
-        </div>
-        <div class="col-12 col-md-6 p-3" align="center">
-            <h3>All Repositories</h3>
+
+<div class="p-2" style="flex:1;">
+    <div class="underline_nav">
+        <nav class="d-flex">
+            <a class="nav_item nav_item_active">
+                 Repositories
+            </a>
+        </nav>
+    </div>
+</div>
+
+<div class="d-flex">
+    <div class="p-2" style="flex:1;">
             @if(repos == null) 
             {
-                <p>Loading ...</p>
+                <p>Loading...</p>
             }
             else if(repos.Count == 0)
             {
-                <p>It seems like you don`t have any repositories yet.</p>
-                <p>Please, create one and come back.</p>
+                <p>You don`t have any repositories :(</p>
             }
             else
             {
-                @foreach(var repository in repos)
+                @foreach(var repo in repos)
                 {
-                    <div class="card mt-3" style="width: 24rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">@repository.name</h5>
-                            <p class="card-text">@repository.description</p>
-                            <a class="btn btn-primary" href="@repository.html_url">View on Github</a>
-                            <p>
-                                <button class="btn btn-success mt-3" @onclick="@(async e => await AddRepository(repository))">Add Repository</button>
-                            </p>
-                        </div>
-                    </div>
+                    <ul class="list-group">
+                        <li class="border-bottom py-4">
+                            <div>
+                                <h3><a class="list_item__title" href=@repo.html_url>@repo.name</a></h3>
+                                <h4 class="list_item__description">@repo.description</h4>
+                                <p>
+                                    <button class="btn btn-success mt-3" @onclick="@(async e => await AddRepository(repo))">Add Repository</button>
+                                </p>
+                             </div>
+                            
+                        </li>
+                    </ul>
                 }
-                <button class="btn btn-primary mt-3" @onclick="GetRepositories">Load more</button>
             }
-        </div>
     </div>
 </div>
 
 @code {
 
     private Models.Account.User _user;
-
-    private List<Repository> addedRepos;
     private List<RepositoryInfoDTO> repos;
     
     protected override async Task OnInitializedAsync()
     {
         _user = await DbService.GetUserAndRepos();
-        addedRepos = _user.Repositories;
         repos = new List<RepositoryInfoDTO>();
         await GetRepositories();
     }

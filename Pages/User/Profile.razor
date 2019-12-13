@@ -40,34 +40,6 @@
                         <span class="card-std-text">@userEmail</span>
                     </div>
                 </div>
-
-                <div class="p-2" style="flex:1;">
-                    <div class="underline_nav">
-                        <nav class="d-flex">
-                            <a class="nav_item nav_item_active">
-                                Repositories
-                            </a>
-                            <a class="nav_item">
-                                Projects
-                            </a>
-                        </nav>
-                    </div>
-
-                    <ul class="list-group">
-                        @if (repos.Count > 0)
-                        {
-                            @foreach (var item in repos)
-                            {
-                                <li class="border-bottom py-4">
-                                    <div>
-                                        <h3><a class="list_item__title" href=@item.html_url>@item.name</a></h3>
-                                    </div>
-    
-                                </li>
-                            }
-                        }
-                    </ul>
-                </div>
             }
     </div>
 
@@ -109,7 +81,6 @@
         {
             await GetGithubToken(query["code"]);
         }
-        await GetGithubRepos();
     }
 
     private async Task GetGithubToken(string code)
@@ -130,15 +101,6 @@
         {
             githubAvatarUrl = setUserInfoResult.Response.avatar_url;
             githubLogin = setUserInfoResult.Response.login;
-        }
-    }
-
-    private async Task GetGithubRepos()
-    {
-        var reposResult = await GithubService.GetUserRepositories(_user);
-        if (string.IsNullOrEmpty(reposResult.ErrorMessage))
-        {
-            repos = reposResult.Response;
         }
     }
 }
