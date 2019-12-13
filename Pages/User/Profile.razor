@@ -15,7 +15,7 @@
 @inject UserManager<User> UserManager
 @inject DatabaseContext DatabaseContext
 @inject NavigationManager NavigationManager
-@inject StateChangedService StateChangedService
+@inject DbService DbService
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
  <div class="d-flex">
@@ -86,7 +86,7 @@
     
     protected override async Task OnInitializedAsync()
     {
-        var authState = await StateChangedService.GetAuthenticationStateAsync();
+        var authState = await DbService.GetAuthenticationStateAsync();
         
         _user = DatabaseContext.Users
             .Include(u => u.GithubUser)

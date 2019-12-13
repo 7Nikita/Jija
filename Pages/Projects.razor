@@ -1,0 +1,12 @@
+@page "/projects"
+@attribute [Authorize]
+
+@using Jija.Models
+@using Jija.Services
+@using Jija.Models.Account
+@using Jija.Models.Core
+
+@inject DbService DbService
+@inject ProjectService ProjectService
+@inject RepoService RepoService
+

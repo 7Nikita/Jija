@@ -1,0 +1,119 @@
+@page "/repositories"
+@attribute [Authorize]
+
+@using Jija.Models
+@using Jija.Models.Core
+@using Jija.Models.Github
+@using Jija.Services
+@using Jija.Services.Github
+
+@inject DbService DbService
+@inject ProjectService ProjectService
+@inject RepoService RepoService
+@inject IGithubService GithubService
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-3 p-3" align="center">
+            <h3>Added Repositories</h3>
+            @if(addedRepos == null) 
+            {
+                <p>Loading ...</p>
+            }
+            else if(repos.Count == 0)
+            {
+                <p>It seems like you haven`t added any repositories yet.</p>
+            }
+            else
+            {
+                @foreach(var repository in addedRepos)
+                {
+                    <div class="card mt-3" style="width: 24rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">@repository.Name</h5>
+                            <p class="card-text">@repository.Description</p>
+                            <a class="btn btn-primary" href="@repository.HtmlUrl">View on Github</a>
+                            <p>
+                                <button class="btn btn-danger mt-3" @onclick="@(async e => await DeleteRepository(repository))">Delete Repository</button>
+                            </p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="col-12 col-md-6 p-3" align="center">
+            <h3>All Repositories</h3>
+            @if(repos == null) 
+            {
+                <p>Loading ...</p>
+            }
+            else if(repos.Count == 0)
+            {
+                <p>It seems like you don`t have any repositories yet.</p>
+                <p>Please, create one and come back.</p>
+            }
+            else
+            {
+                @foreach(var repository in repos)
+                {
+                    <div class="card mt-3" style="width: 24rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">@repository.name</h5>
+                            <p class="card-text">@repository.description</p>
+                            <a class="btn btn-primary" href="@repository.html_url">View on Github</a>
+                            <p>
+                                <button class="btn btn-success mt-3" @onclick="@(async e => await AddRepository(repository))">Add Repository</button>
+                            </p>
+                        </div>
+                    </div>
+                }
+                <button class="btn btn-primary mt-3" @onclick="GetRepositories">Load more</button>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+
+    private Models.Account.User _user;
+
+    private List<Repository> addedRepos;
+    private List<RepositoryInfoDTO> repos;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        _user = await DbService.GetUserAndRepos();
+        addedRepos = _user.Repositories;
+        repos = new List<RepositoryInfoDTO>();
+        await GetRepositories();
+    }
+
+    
+    private async Task GetRepositories()
+    {
+        var result = await GithubService.GetUserRepositories(_user);
+        if(result.ErrorMessage == null)
+        {
+            result.Response.ForEach(r => repos.Add(r));
+        }
+    }
+
+    private async Task AddRepository(RepositoryInfoDTO githubRepository)
+    {
+        var success = await RepoService.CreateRepo(_user, githubRepository.id, githubRepository.name, githubRepository.description, githubRepository.html_url);
+        if(success)
+        {
+            StateHasChanged();
+        }
+    }
+
+    private async Task DeleteRepository(Repository repository)
+    {
+        var success = await RepoService.DeleteRepo(repository);
+        if(success)
+        {
+            StateHasChanged();
+        }
+    }
+    
+}

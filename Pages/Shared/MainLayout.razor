@@ -8,7 +8,7 @@
 
 @inject UserManager<User> UserManager
 @inject SignInManager<User> SignInManager
-@inject StateChangedService StateChangedService
+@inject DbService DbService
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 <div class="sidebar">
@@ -44,8 +44,8 @@
         private async Task LogOut()
         {
             await localStorage.RemoveItemAsync("token");
-            StateChangedService.SetAuthenticationState(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()))));
-            StateChangedService.NotifyStateChanged();
+            DbService.SetAuthenticationState(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()))));
+            DbService.NotifyStateChanged();
         }
     }
 
