@@ -14,8 +14,8 @@ namespace JijaTest.Services.Github
         private readonly DatabaseContext _dbContext = new DatabaseContext(Mocks.GetApplicationDbContextOptions());
 
         private readonly Mock<IGithubClient> _githubClient = new Mock<IGithubClient>();
-        
-        [SetUp]
+
+        [OneTimeSetUp]
         public void SetUp()
         {
             Initializer.InitializeDbForTests(_dbContext);
@@ -29,14 +29,14 @@ namespace JijaTest.Services.Github
 
             _githubClient.Setup(req => req.GetRepos()).ReturnsAsync(repos);
             var service = new GithubService(Mocks.GetConfiguration(), _githubClient.Object, _dbContext);
-            var resp = service.GetUserRepositories(new User{ GithubUser = new GithubUser {AccessToken = "123"}});
+            var resp = service.GetUserRepositories(new User {GithubUser = new GithubUser {AccessToken = "123"}});
 
             Assert.AreEqual(1, resp.Result.Response.Count);
             Assert.AreEqual("MicrosoftTests", resp.Result.Response[0].name);
         }
 
         [Test]
-        public void SetGithubUserInfo()
+        public void SetGithubUserInfoTest()
         {
             _githubClient.Setup(req => req.GetUserInfo()).ReturnsAsync(new UserInfoDTO
             {
@@ -54,12 +54,31 @@ namespace JijaTest.Services.Github
             var dbUser = _dbContext.Users.FirstOrDefault(user => user.UserName == "Mario");
             Assert.AreEqual("https://github.com/guido", dbUser.GithubUser.HtmlUrl);
         }
-        
-        [TearDown]
+
+        [Test]
+        public void SetOauthTokenTest()
+        {
+            _githubClient.Setup(req => req.GetOauthToken(It.IsAny<string>()))
+                .ReturnsAsync(new OauthTokenDTO
+                {
+                    access_token = "345"
+                });
+
+            _dbContext.Users.ForEach(i => TestContext.WriteLine(i.UserName));
+            var fakeUser = _dbContext.Users.FirstOrDefault(user => user.UserName == "Mario");
+
+            var service = new GithubService(Mocks.GetConfiguration(), _githubClient.Object, _dbContext);
+
+            var resp = service.SetOauthToken("code", fakeUser);
+
+            var dbUser = _dbContext.Users.FirstOrDefault(user => user.UserName == "Mario");
+            Assert.AreEqual("345", dbUser.GithubUser.AccessToken);
+        }
+
+        [OneTimeTearDown]
         public void TearDown()
-        { 
+        {
             _dbContext.Database.EnsureDeleted();
         }
-        
     }
 }
