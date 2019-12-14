@@ -20,3 +20,27 @@
     </div>
 </div>
 
+@code {
+
+    Models.Account.User user;
+    
+    List<Project> ownedProjects;
+    List<Project> contributedProjects;
+    List<Invite> invites;
+    List<Repository> repos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        contributedProjects = new List<Project>();
+        repos = new List<Repository>();
+
+        user = await DbService.GetAll();
+
+        ownedProjects = user.OwnedProjects;
+        repos = user.Repositories;
+        invites = user.Invites;
+        
+        user.ContributedProjects.ForEach(p => contributedProjects.Add(p.Project));
+    }
+
+}

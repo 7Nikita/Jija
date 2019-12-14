@@ -1,5 +1,4 @@
 @page "/account/profile"
-
 @attribute [Authorize]
 
 @using Jija.Models
@@ -39,6 +38,7 @@
                         <span class="card-std-text">@githubLogin</span>
                         <span class="card-std-text">@userEmail</span>
                     </div>
+                    <a class="edit-profile-btn" href="/account/edit_profile">Edit profile</a>
                 </div>
             }
     </div>

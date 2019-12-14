@@ -1,0 +1,120 @@
+@page "/account/edit_profile"
+@attribute [Authorize]
+
+@using System.Security.Claims
+@using Jija.Models
+@using Jija.Models.Account
+@using Jija.Models.Github
+@using Jija.Services
+@using Jija.Services.Github;
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Identity
+
+@inject NavigationManager NavigationManager
+@inject JWTService JWTService
+@inject UserManager<User> UserManager
+@inject DbService DbService
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+
+<div class="block">
+        <div class="element">
+            <img class="product__img" src=@gUser.AvatarUrl />
+        </div>
+      <EditForm Model="@accForm" OnValidSubmit="@HandleChangeInfo" class="login_border">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+                <div class="form-group">
+                    <label class="login_text">Username</label>
+                    <InputText class="form-control" id="inputUserName" placeholder="username" @bind-Value="accForm.Username" />
+                </div>
+ 
+                <div class="form-group">
+                    <label class="login_text">Email</label>
+                    <InputText class="form-control" id="inputEmail" placeholder="email" @bind-Value="accForm.Email" />
+                </div>
+                <div class="d-flex justify-content-center">
+                    <input class = "btn btn-success bth-width" type="submit" value="Update" />
+                </div>
+        </EditForm>
+
+        <EditForm Model="@passForm" OnValidSubmit="@HandleChangePass" class="login_border">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+                <div class=" form-group">
+                    <label class="login_text">Old password</label>
+                    <InputText class="form-control" id="inputOldPass" placeholder="old pass" @bind-Value="passForm.OldPass" />
+                </div>
+ 
+                <div class=" form-group">
+                    <label class="login_text">New password</label>
+                    <InputText class="form-control" id="inputNewPass" placeholder="new pass" @bind-Value="passForm.NewPass" />
+                </div>
+                <div class="d-flex justify-content-center">
+                    <input class = "btn btn-success bth-width" width="200px" type="submit" value="Update" />
+                </div>
+        </EditForm>
+    </div>
+
+
+@code {
+
+    User user;
+    GithubUser gUser = new GithubUser();
+
+    EditPassForm passForm = new EditPassForm();
+    EditAccountForm accForm = new EditAccountForm();
+
+    List<IdentityError> editInfoErrors = new List<IdentityError>();
+    List<IdentityError> editPassErrors = new List<IdentityError>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = await DbService.GetUser();
+
+        gUser = user.GithubUser;
+
+        accForm.Username = user.UserName;
+        accForm.Email = user.Email;
+    }
+
+    private async Task HandleChangeInfo()
+    {
+        user.UserName = accForm.Username;
+        user.Email = accForm.Email;
+
+        var res = await UserManager.UpdateAsync(user);
+
+        if (res.Succeeded)
+        {
+            var token = await JWTService.GenerateJWT(user);
+            await localStorage.SetItemAsync("token", token);
+            var identity = new ClaimsIdentity(await  JWTService.GetClaims(user), "Base Authentication");
+            var principal = new ClaimsPrincipal(identity);
+            
+            DbService.SetAuthenticationState(Task.FromResult(new AuthenticationState(principal)));
+            DbService.NotifyStateChanged();
+            NavigationManager.NavigateTo("/account/profile");
+
+        }
+        else
+        {
+            editInfoErrors = res.Errors as List<IdentityError>;
+        }
+    }
+
+    private async Task HandleChangePass()
+    {
+        user.UserName = accForm.Username;
+        user.Email = accForm.Email;
+
+        var res = await UserManager.ChangePasswordAsync(user, passForm.OldPass, passForm.NewPass);
+
+        if (!res.Succeeded)
+        {
+            editPassErrors = res.Errors as List<IdentityError>;
+        }
+        
+        NavigationManager.NavigateTo("/account/profile");
+    } 
+}

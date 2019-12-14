@@ -318,4 +318,18 @@ app {
         border: 1px solid rgba(27,31,35,.2);
         border-radius: .25em;
     }
+    .block{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .element{
+        width: 100%;
+        margin: 50px;
+    }
+
+    .bth-width{
+        width: 200px;
+    }
 }
