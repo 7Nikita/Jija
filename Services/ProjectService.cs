@@ -47,6 +47,7 @@ namespace Jija.Services
                 .Include(p => p.Tickets)
                 .ThenInclude(ticket => ticket.Assignees)
                 .ThenInclude(asg => asg.AssignedUser)
+                .Where(p => p.Id == id)
                 .SingleOrDefaultAsync();
 
         public async Task<Project> Find(Repository repository) =>
