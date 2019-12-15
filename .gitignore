@@ -131,3 +131,4 @@ bin/
 obj/Debug/
 .vscode/
 .idea/
+application_log.txt
