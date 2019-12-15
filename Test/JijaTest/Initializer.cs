@@ -9,6 +9,7 @@ namespace JijaTest
     public static class Initializer
     {
         private static readonly List<User> fakeUsers = new List<User>();
+        private static readonly List<Project> fakeProjects = new List<Project>();
         private static readonly List<Repository> fakeRepos = new List<Repository>();
         private static readonly List<GithubUser> fakeGithubUsers = new List<GithubUser>();
 
@@ -20,10 +21,15 @@ namespace JijaTest
                     {
                         Id = 1,
                         Name = "MarioKart"
-                    }         
+                    },
+                    new Repository
+                    {
+                        Id = 7,
+                        Name = "Sonic-X"
+                    }
                 }
             );
-            
+
             fakeUsers.AddRange(new[]
                 {
                     new User
@@ -35,6 +41,7 @@ namespace JijaTest
                     },
                     new User
                     {
+                        Id = "33",
                         UserName = "Mario",
                         Email = "mario@luigi.com",
                         GithubUser = new GithubUser
@@ -45,7 +52,7 @@ namespace JijaTest
                     }
                 }
             );
-            
+
             fakeGithubUsers.AddRange(new []
             {
                 new GithubUser
@@ -55,11 +62,31 @@ namespace JijaTest
                     AvatarUrl = "https://frankerfaces.com"
                 }
             });
+            
+            fakeProjects.AddRange( new []
+                {
+                    new Project
+                    {
+                        Id = 1,
+                        Name = "Legend of Zelda",
+                        Repository = fakeRepos[0],
+                        Contributors = new List<ProjectUser>
+                        {
+                            new ProjectUser
+                            {
+                                Contributor =  fakeUsers[0],
+                                ContributorId = fakeUsers[0].Id
+                            }
+                        }
+                    }   
+                }
+            );
         }
         
         public static void InitializeDbForTests(DatabaseContext dbContext)
         {
             dbContext.Users.AddRange(fakeUsers);
+            dbContext.Projects.AddRange(fakeProjects);
             dbContext.Repositories.AddRange(fakeRepos);
             dbContext.GithubUsers.AddRange(fakeGithubUsers);
             dbContext.SaveChanges();
