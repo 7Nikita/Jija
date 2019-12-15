@@ -15,6 +15,9 @@ namespace Jija.Models
         public DbSet<ProjectUser> ProjectUsers { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Assignee> Assignees { get; set; }
+        
+        public DbSet<Webhook> Webhooks { get; set; }
+
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 

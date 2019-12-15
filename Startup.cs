@@ -94,7 +94,7 @@ namespace Jija
             services.AddScoped<IGithubClient, GithubClient>();
             services.AddScoped<IGithubService, GithubService>();
             services.AddScoped<RepoService>();
-            services.AddScoped<ProjectService>();
+            services.AddScoped<IProjectService, ProjectService>();
 
             services.AddScoped<JWTService>();
             services.AddScoped<DbService>();
@@ -126,6 +126,7 @@ namespace Jija
 
             app.UseEndpoints(endpoints =>
             {
+                //endpoints.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });

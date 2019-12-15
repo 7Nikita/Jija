@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Jija.Models.Account;
+using Jija.Models.Github;
 
 namespace Jija.Models.Core
 {
@@ -23,5 +24,8 @@ namespace Jija.Models.Core
         
         [InverseProperty("Project")]
         public List<Ticket> Tickets { get; set; }
+        
+        [InverseProperty("Project")]
+        public List<Webhook> Webhooks { get; set; }
     }
 }
