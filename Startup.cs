@@ -17,8 +17,8 @@ using Blazored.LocalStorage;
 using Jija.Models;
 using Jija.Models.Account;
 using Jija.Services;
+using Jija.Services.Background;
 using Jija.Services.Github;
-using Jija.Services.Logger;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -88,6 +88,9 @@ namespace Jija
             services.AddServerSideBlazor();
             services.AddBlazoredLocalStorage();
             
+            services.AddHostedService<QueuedHostedService>();
+            services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
+            
             services.AddScoped<HttpClient>();
 
             services.AddMvc()
@@ -98,6 +101,7 @@ namespace Jija
             services.AddScoped<IGithubService, GithubService>();
             services.AddScoped<IRepoService, RepoService>();
             services.AddScoped<IProjectService, ProjectService>();
+            services.AddSingleton<IMailing, SmtpService>();
 
             services.AddScoped<JWTService>();
             services.AddScoped<DbService>();
@@ -133,9 +137,7 @@ namespace Jija
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
-
-            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "application_log.txt"));
-
+            
         }
     }
 }

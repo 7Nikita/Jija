@@ -3,12 +3,15 @@
 @using Jija.Models
 @using Jija.Models.Account
 @using Jija.Models.Github
+@using Jija.Services
 @using Microsoft.AspNetCore.Identity
+@using Microsoft.Extensions.Configuration
 
 @inject UserManager<User> UserManager
 @inject DatabaseContext DatabaseContext
 @inject NavigationManager NavigationManager
-
+@inject IMailing SmtpService
+@inject IConfiguration Configuration
 
 
  
@@ -61,6 +64,8 @@
 
             await DatabaseContext.GithubUsers.AddAsync(githubUser);
             await DatabaseContext.SaveChangesAsync();
+            
+            SmtpService.Send(user.Email, Configuration["Mailing:Topic"], Configuration["Mailing:Description"]);
             
             NavigationManager.NavigateTo("account/login");
         }

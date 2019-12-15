@@ -1,100 +1,409 @@
-Now listening on: https://localhost:5001
-Now listening on: http://localhost:5000
-Application started. Press Ctrl+C to shut down.
-Hosting environment: Development
-Content root path: /Users/nikita/Documents/projects/Jija
-Request starting HTTP/1.1 GET https://localhost:5001/  
-Executing endpoint '/_Host'
-Route matched with {page = "/_Host", action = "", controller = ""}. Executing page /_Host
-Executing an implicit handler method - ModelState is Valid
-Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
-Authorization failed.
-Authorization failed.
-Executed page /_Host in 277.184ms
-Executed endpoint '/_Host'
-Request finished in 404.77070000000003ms 200 text/html; charset=utf-8
-Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap/bootstrap.min.css  
-Sending file. Request path: '/css/bootstrap/bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/bootstrap/bootstrap.min.css'
-Request finished in 61.7252ms 200 text/css
-Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
-Sending file. Request path: '/css/site.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/site.css'
-Request finished in 2.2035ms 200 text/css
-Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
-Request finished in 1.9741000000000002ms 404 
-Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
-Sending file. Request path: '/css/open-iconic/font/css/open-iconic-bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css'
-Request finished in 1.6379000000000001ms 200 text/css
-Request starting HTTP/1.1 GET https://localhost:5001/_framework/blazor.server.js  
-Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
-Request finished in 36.7411ms 200 application/javascript
-Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/fonts/open-iconic.woff  
-Sending file. Request path: '/css/open-iconic/font/fonts/open-iconic.woff'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/fonts/open-iconic.woff'
-Request finished in 2.8248ms 200 application/font-woff
-Request starting HTTP/1.1 POST https://localhost:5001/_blazor/negotiate text/plain;charset=UTF-8 0
-Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
-Request finished in 4.758900000000001ms 404 
-Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M"
-Executing endpoint '/_blazor/negotiate'
-Executed endpoint '/_blazor/negotiate'
-Request finished in 33.945100000000004ms 200 application/json
-Request starting HTTP/1.1 GET https://localhost:5001/_blazor?id=WrSyqo8EeZRq-A48X9SbWw&access_token=%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M%22  
-Successfully validated the token.
-Executing endpoint '/_blazor'
-Authorization was successful.
-Authorization was successful.
-Request starting HTTP/1.1 POST https://localhost:5001/_blazor/disconnect multipart/form-data; boundary=----WebKitFormBoundaryyq93UIEdrFQ9boVu 359
-Executing endpoint 'Blazor disconnect'
-Executed endpoint 'Blazor disconnect'
-Request finished in 48.0428ms 200 
-Executed endpoint '/_blazor'
-Request finished in 654.0979ms 101 
-Now listening on: https://localhost:5001
-Now listening on: http://localhost:5000
-Application started. Press Ctrl+C to shut down.
-Hosting environment: Development
-Content root path: /Users/nikita/Documents/projects/Jija
-Request starting HTTP/1.1 GET https://localhost:5001/  
-Executing endpoint '/_Host'
-Route matched with {page = "/_Host", action = "", controller = ""}. Executing page /_Host
-Executing an implicit handler method - ModelState is Valid
-Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
-Authorization failed.
-Authorization failed.
-Executed page /_Host in 280.5858ms
-Executed endpoint '/_Host'
-Request finished in 405.86850000000004ms 200 text/html; charset=utf-8
-Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap/bootstrap.min.css  
-Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
-Sending file. Request path: '/css/bootstrap/bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/bootstrap/bootstrap.min.css'
-Sending file. Request path: '/css/site.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/site.css'
-Request finished in 58.3292ms 200 text/css
-Request finished in 6.247800000000001ms 200 text/css
-Request starting HTTP/1.1 GET https://localhost:5001/_framework/blazor.server.js  
-Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
-Request finished in 5.7464ms 404 
-Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
-Sending file. Request path: '/css/open-iconic/font/css/open-iconic-bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css'
-Request finished in 1.9068ms 200 text/css
-Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
-Request finished in 73.6417ms 200 application/javascript
-Request starting HTTP/1.1 POST https://localhost:5001/_blazor/negotiate text/plain;charset=UTF-8 0
-Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
-Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/fonts/open-iconic.woff  
-Request finished in 3.9359ms 404 
-Sending file. Request path: '/css/open-iconic/font/fonts/open-iconic.woff'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/fonts/open-iconic.woff'
-Request finished in 4.3408ms 200 application/font-woff
-Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M"
-Executing endpoint '/_blazor/negotiate'
-Executed endpoint '/_blazor/negotiate'
-Request finished in 31.9543ms 200 application/json
-Request starting HTTP/1.1 GET https://localhost:5001/_blazor?id=f4G_vJlhywywtGBlnyadkQ&access_token=%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M%22  
-Successfully validated the token.
-Executing endpoint '/_blazor'
-Authorization was successful.
-Authorization was successful.
-Request starting HTTP/1.1 POST https://localhost:5001/_blazor/disconnect multipart/form-data; boundary=----WebKitFormBoundaryN9WlFOO7fcBexJKE 359
-Executing endpoint 'Blazor disconnect'
-Executed endpoint '/_blazor'
-Executed endpoint 'Blazor disconnect'
-Request finished in 40.8172ms 200 
-Request finished in 1282.2694000000001ms 101 
+2019-12-15 18:19:31.414 +03:00 [INF] Starting up
+2019-12-15 18:19:31.414 +03:00 [INF] Starting up
+2019-12-15 18:19:31.844 +03:00 [INF] User profile is available. Using '/Users/nikita/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2019-12-15 18:19:32.165 +03:00 [INF] Now listening on: https://localhost:5001
+2019-12-15 18:19:32.165 +03:00 [INF] Now listening on: http://localhost:5000
+2019-12-15 18:19:32.168 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-12-15 18:19:32.169 +03:00 [INF] Hosting environment: Development
+2019-12-15 18:19:32.169 +03:00 [INF] Content root path: /Users/nikita/Documents/projects/Jija
+2019-12-15 18:19:32.779 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-12-15 18:19:32.873 +03:00 [INF] Executing endpoint '/_Host'
+2019-12-15 18:19:32.909 +03:00 [INF] Route matched with {page = "/_Host", action = "", controller = ""}. Executing page /_Host
+2019-12-15 18:19:32.935 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-12-15 18:19:32.938 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-12-15 18:19:33.160 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:33.172 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:33.291 +03:00 [INF] Executed page /_Host in 299.0138ms
+2019-12-15 18:19:33.302 +03:00 [INF] Executed endpoint '/_Host'
+2019-12-15 18:19:33.309 +03:00 [INF] Request finished in 537.9118ms 200 text/html; charset=utf-8
+2019-12-15 18:19:33.339 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-12-15 18:19:33.397 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/site.css'
+2019-12-15 18:19:33.410 +03:00 [INF] Request finished in 70.3884ms 200 text/css
+2019-12-15 18:19:33.415 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap/bootstrap.min.css  
+2019-12-15 18:19:33.424 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_framework/blazor.server.js  
+2019-12-15 18:19:33.430 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-15 18:19:33.433 +03:00 [INF] Request finished in 8.1255ms 404 
+2019-12-15 18:19:33.457 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+2019-12-15 18:19:33.459 +03:00 [INF] Sending file. Request path: '/css/open-iconic/font/css/open-iconic-bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css'
+2019-12-15 18:19:33.459 +03:00 [INF] Request finished in 1.9281000000000001ms 200 text/css
+2019-12-15 18:19:33.460 +03:00 [INF] Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+2019-12-15 18:19:33.463 +03:00 [INF] Request finished in 36.8405ms 200 application/javascript
+2019-12-15 18:19:33.502 +03:00 [INF] Sending file. Request path: '/css/bootstrap/bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/bootstrap/bootstrap.min.css'
+2019-12-15 18:19:33.503 +03:00 [INF] Request finished in 87.7544ms 200 text/css
+2019-12-15 18:19:33.568 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/negotiate text/plain;charset=UTF-8 0
+2019-12-15 18:19:33.568 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-15 18:19:33.573 +03:00 [INF] Request finished in 4.2667ms 404 
+2019-12-15 18:19:33.584 +03:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M"
+2019-12-15 18:19:33.585 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2019-12-15 18:19:33.601 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2019-12-15 18:19:33.601 +03:00 [INF] Request finished in 32.9172ms 200 application/json
+2019-12-15 18:19:33.850 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/fonts/open-iconic.woff  
+2019-12-15 18:19:33.856 +03:00 [INF] Sending file. Request path: '/css/open-iconic/font/fonts/open-iconic.woff'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/fonts/open-iconic.woff'
+2019-12-15 18:19:33.857 +03:00 [INF] Request finished in 6.99ms 200 application/font-woff
+2019-12-15 18:19:33.924 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_blazor?id=PimBmG9MLlakdwWgq8yyMw&access_token=%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M%22  
+2019-12-15 18:19:34.086 +03:00 [INF] Successfully validated the token.
+2019-12-15 18:19:34.087 +03:00 [INF] Executing endpoint '/_blazor'
+2019-12-15 18:19:34.167 +03:00 [INF] Authorization was successful.
+2019-12-15 18:19:34.168 +03:00 [INF] Authorization was successful.
+2019-12-15 18:19:46.895 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-12-15 18:19:46.897 +03:00 [INF] Executing endpoint '/_Host'
+2019-12-15 18:19:46.899 +03:00 [INF] Route matched with {page = "/_Host", action = "", controller = ""}. Executing page /_Host
+2019-12-15 18:19:46.901 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-12-15 18:19:46.901 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-12-15 18:19:46.909 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-12-15 18:19:46.912 +03:00 [INF] The file /css/site.css was not modified
+2019-12-15 18:19:46.913 +03:00 [INF] Request finished in 4.4933000000000005ms 304 text/css
+2019-12-15 18:19:46.921 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:46.922 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:46.922 +03:00 [INF] Executed page /_Host in 23.2527ms
+2019-12-15 18:19:46.923 +03:00 [INF] Executed endpoint '/_Host'
+2019-12-15 18:19:46.923 +03:00 [INF] Request finished in 27.718300000000003ms 200 text/html; charset=utf-8
+2019-12-15 18:19:47.038 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-15 18:19:47.039 +03:00 [INF] Request finished in 1.2754ms 404 
+2019-12-15 18:19:47.069 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+2019-12-15 18:19:47.071 +03:00 [INF] The file /css/open-iconic/font/css/open-iconic-bootstrap.min.css was not modified
+2019-12-15 18:19:47.072 +03:00 [INF] Request finished in 2.4873000000000003ms 304 text/css
+2019-12-15 18:19:47.091 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/fonts/open-iconic.woff  
+2019-12-15 18:19:47.092 +03:00 [INF] The file /css/open-iconic/font/fonts/open-iconic.woff was not modified
+2019-12-15 18:19:47.093 +03:00 [INF] Request finished in 2.0136000000000003ms 304 application/font-woff
+2019-12-15 18:19:47.103 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap/bootstrap.min.css  
+2019-12-15 18:19:47.103 +03:00 [INF] The file /css/bootstrap/bootstrap.min.css was not modified
+2019-12-15 18:19:47.104 +03:00 [INF] Request finished in 0.5307000000000001ms 304 text/css
+2019-12-15 18:19:47.111 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+2019-12-15 18:19:47.111 +03:00 [INF] The file /favicon.ico was not modified
+2019-12-15 18:19:47.111 +03:00 [INF] Request finished in 0.46490000000000004ms 304 image/x-icon
+2019-12-15 18:19:47.161 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_framework/blazor.server.js  
+2019-12-15 18:19:47.161 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2019-12-15 18:19:47.164 +03:00 [INF] Request finished in 3.3384ms 304 application/javascript
+2019-12-15 18:19:47.232 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/negotiate text/plain;charset=UTF-8 0
+2019-12-15 18:19:47.234 +03:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNjEwM2Q5My01MTA5LTRiYzYtYTc4NC1lODRmZjY3MzNmYmIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoid29sb2xvIiwiZXhwIjoxNjA3OTU3MDA2LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.B9RgnA2sBa4vgJv_nYvcbLytJxtNI2Sx6PI_mhkdVGg"
+2019-12-15 18:19:47.234 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2019-12-15 18:19:47.235 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2019-12-15 18:19:47.237 +03:00 [INF] Request finished in 4.6773ms 200 application/json
+2019-12-15 18:19:47.469 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_blazor?id=SgchiDO9ZUwfUc38XCzEFQ&access_token=%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNjEwM2Q5My01MTA5LTRiYzYtYTc4NC1lODRmZjY3MzNmYmIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoid29sb2xvIiwiZXhwIjoxNjA3OTU3MDA2LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSJ9.B9RgnA2sBa4vgJv_nYvcbLytJxtNI2Sx6PI_mhkdVGg%22  
+2019-12-15 18:19:47.478 +03:00 [INF] Successfully validated the token.
+2019-12-15 18:19:47.479 +03:00 [INF] Executing endpoint '/_blazor'
+2019-12-15 18:19:47.543 +03:00 [INF] Authorization was successful.
+2019-12-15 18:19:47.543 +03:00 [INF] Authorization was successful.
+2019-12-15 18:19:48.884 +03:00 [INF] Authorization was successful.
+2019-12-15 18:19:48.890 +03:00 [INF] Authorization was successful.
+2019-12-15 18:19:48.891 +03:00 [INF] Authorization was successful.
+2019-12-15 18:19:48.891 +03:00 [INF] Authorization was successful.
+2019-12-15 18:19:48.893 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:48.894 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:48.896 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:48.903 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:48.903 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:48.903 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:48.904 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:49.786 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:49.788 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:49.790 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:52.503 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:52.503 +03:00 [INF] Authorization failed.
+2019-12-15 18:19:52.503 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:04.404 +03:00 [INF] Entity Framework Core 3.0.1 initialized 'DatabaseContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2019-12-15 18:20:08.889 +03:00 [INF] Executing DbCommand [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE ((a."NormalizedUserName" = @__normalizedUserName_0) AND ((a."NormalizedUserName" IS NOT NULL) AND (@__normalizedUserName_0 IS NOT NULL))) OR ((a."NormalizedUserName" IS NULL) AND (@__normalizedUserName_0 IS NULL))
+LIMIT 1
+2019-12-15 18:20:09.530 +03:00 [INF] Executing DbCommand [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?' (DbType = Boolean), @p12='?', @p13='?' (DbType = Boolean), @p14='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2019-12-15 18:20:09.781 +03:00 [INF] Executing DbCommand [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "GithubUsers" ("AccessToken", "AvatarUrl", "HtmlUrl", "Login", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2019-12-15 18:20:10.044 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:10.044 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:10.044 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:10.393 +03:00 [ERR] Error occurred executing workItem.
+System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (00000005, 0xFFFDFFFF): nodename nor servname provided, or not known
+   at System.Net.Dns.InternalGetHostByName(String hostName)
+   at System.Net.Dns.ResolveCallback(Object context)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw(Exception source)
+   at System.Net.Dns.HostResolutionEndHelper(IAsyncResult asyncResult)
+   at System.Net.Dns.EndGetHostAddresses(IAsyncResult asyncResult)
+   at System.Net.Dns.<>c.<GetHostAddressesAsync>b__25_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.SocketUtils.ConnectAsync(String host, Int32 port, IPEndPoint localEndPoint, Int32 timeout, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.MailService.ConnectSocket(String host, Int32 port, Boolean doAsync, CancellationToken cancellationToken)
+   at MailKit.Net.Smtp.SmtpClient.ConnectAsync(String host, Int32 port, SecureSocketOptions options, Boolean doAsync, CancellationToken cancellationToken)
+   at Jija.Services.SmtpService.<>c__DisplayClass5_0.<<Send>b__0>d.MoveNext() in /Users/nikita/Documents/projects/Jija/Services/Util/SmtpService.cs:line 41
+--- End of stack trace from previous location where exception was thrown ---
+   at Jija.Services.Background.QueuedHostedService.BackgroundProcessing(CancellationToken stoppingToken) in /Users/nikita/Documents/projects/Jija/Services/Background/QueuedHostedService.cs:line 36
+2019-12-15 18:20:20.082 +03:00 [INF] Executing DbCommand [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE ((a."NormalizedUserName" = @__normalizedUserName_0) AND ((a."NormalizedUserName" IS NOT NULL) AND (@__normalizedUserName_0 IS NOT NULL))) OR ((a."NormalizedUserName" IS NULL) AND (@__normalizedUserName_0 IS NULL))
+LIMIT 1
+2019-12-15 18:20:20.226 +03:00 [INF] Executing DbCommand [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE (a."UserId" = @__userId_0) AND (@__userId_0 IS NOT NULL)
+2019-12-15 18:20:20.748 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.749 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.749 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.749 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.749 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.750 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.763 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.763 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.764 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.766 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:20.855 +03:00 [INF] Executing DbCommand [Parameters=[@__authState_User_Identity_Name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", g."Id", g."AccessToken", g."AvatarUrl", g."HtmlUrl", g."Login", g."UserId"
+FROM "AspNetUsers" AS a
+LEFT JOIN "GithubUsers" AS g ON a."Id" = g."UserId"
+WHERE ((a."UserName" = @__authState_User_Identity_Name_0) AND ((a."UserName" IS NOT NULL) AND (@__authState_User_Identity_Name_0 IS NOT NULL))) OR ((a."UserName" IS NULL) AND (@__authState_User_Identity_Name_0 IS NULL))
+LIMIT 2
+2019-12-15 18:20:38.798 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:38.801 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:38.802 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:38.810 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:38.811 +03:00 [INF] Authorization was successful.
+2019-12-15 18:20:38.813 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:38.814 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:38.815 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:38.816 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:38.816 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:38.817 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:38.817 +03:00 [INF] Authorization failed.
+2019-12-15 18:20:39.953 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/disconnect multipart/form-data; boundary=----WebKitFormBoundaryFhudGedM7DUDzVEB 359
+2019-12-15 18:20:39.957 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2019-12-15 18:20:40.014 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2019-12-15 18:20:40.014 +03:00 [INF] Request finished in 61.546600000000005ms 0 
+2019-12-15 18:20:40.034 +03:00 [INF] Executed endpoint '/_blazor'
+2019-12-15 18:20:40.035 +03:00 [INF] Request finished in 52564.9968ms 101 
+2019-12-15 18:24:26.086 +03:00 [INF] Starting up
+2019-12-15 18:24:26.604 +03:00 [INF] User profile is available. Using '/Users/nikita/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2019-12-15 18:24:26.959 +03:00 [INF] Now listening on: https://localhost:5001
+2019-12-15 18:24:26.959 +03:00 [INF] Now listening on: http://localhost:5000
+2019-12-15 18:24:26.961 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-12-15 18:24:26.961 +03:00 [INF] Hosting environment: Development
+2019-12-15 18:24:26.961 +03:00 [INF] Content root path: /Users/nikita/Documents/projects/Jija
+2019-12-15 18:24:27.462 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-12-15 18:24:27.572 +03:00 [INF] Executing endpoint '/_Host'
+2019-12-15 18:24:27.603 +03:00 [INF] Route matched with {page = "/_Host", action = "", controller = ""}. Executing page /_Host
+2019-12-15 18:24:27.627 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-12-15 18:24:27.630 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-12-15 18:24:27.846 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:27.852 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:27.902 +03:00 [INF] Executed page /_Host in 266.4458ms
+2019-12-15 18:24:27.925 +03:00 [INF] Executed endpoint '/_Host'
+2019-12-15 18:24:27.928 +03:00 [INF] Request finished in 471.035ms 200 text/html; charset=utf-8
+2019-12-15 18:24:27.951 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap/bootstrap.min.css  
+2019-12-15 18:24:28.019 +03:00 [INF] Sending file. Request path: '/css/bootstrap/bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/bootstrap/bootstrap.min.css'
+2019-12-15 18:24:28.046 +03:00 [INF] Request finished in 95.137ms 200 text/css
+2019-12-15 18:24:28.059 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-15 18:24:28.059 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_framework/blazor.server.js  
+2019-12-15 18:24:28.062 +03:00 [INF] Request finished in 4.3598ms 404 
+2019-12-15 18:24:28.091 +03:00 [INF] Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+2019-12-15 18:24:28.091 +03:00 [INF] Request finished in 32.4491ms 200 application/javascript
+2019-12-15 18:24:28.106 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-12-15 18:24:28.119 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/site.css'
+2019-12-15 18:24:28.119 +03:00 [INF] Request finished in 13.4726ms 200 text/css
+2019-12-15 18:24:28.130 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+2019-12-15 18:24:28.132 +03:00 [INF] Sending file. Request path: '/css/open-iconic/font/css/open-iconic-bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css'
+2019-12-15 18:24:28.132 +03:00 [INF] Request finished in 1.7359ms 200 text/css
+2019-12-15 18:24:28.168 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-15 18:24:28.168 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/negotiate text/plain;charset=UTF-8 0
+2019-12-15 18:24:28.178 +03:00 [INF] Request finished in 10.1568ms 404 
+2019-12-15 18:24:28.193 +03:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M"
+2019-12-15 18:24:28.193 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2019-12-15 18:24:28.202 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2019-12-15 18:24:28.203 +03:00 [INF] Request finished in 34.726800000000004ms 200 application/json
+2019-12-15 18:24:28.460 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/fonts/open-iconic.woff  
+2019-12-15 18:24:28.472 +03:00 [INF] Sending file. Request path: '/css/open-iconic/font/fonts/open-iconic.woff'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/fonts/open-iconic.woff'
+2019-12-15 18:24:28.475 +03:00 [INF] Request finished in 15.377600000000001ms 200 application/font-woff
+2019-12-15 18:24:28.535 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_blazor?id=7CUztSJJjHadjcOfllNRDA&access_token=%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M%22  
+2019-12-15 18:24:28.662 +03:00 [INF] Successfully validated the token.
+2019-12-15 18:24:28.663 +03:00 [INF] Executing endpoint '/_blazor'
+2019-12-15 18:24:28.726 +03:00 [INF] Authorization was successful.
+2019-12-15 18:24:28.726 +03:00 [INF] Authorization was successful.
+2019-12-15 18:24:30.355 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/disconnect multipart/form-data; boundary=----WebKitFormBoundarySBWjjncNo5E0ZOGv 359
+2019-12-15 18:24:30.371 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2019-12-15 18:24:30.409 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2019-12-15 18:24:30.410 +03:00 [INF] Request finished in 54.776500000000006ms 200 
+2019-12-15 18:24:30.411 +03:00 [INF] Executed endpoint '/_blazor'
+2019-12-15 18:24:30.412 +03:00 [INF] Request finished in 1876.8617000000002ms 101 
+2019-12-15 18:24:33.018 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-12-15 18:24:33.020 +03:00 [INF] Executing endpoint '/_Host'
+2019-12-15 18:24:33.020 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-15 18:24:33.021 +03:00 [INF] Request finished in 1.0262ms 404 
+2019-12-15 18:24:33.021 +03:00 [INF] Route matched with {page = "/_Host", action = "", controller = ""}. Executing page /_Host
+2019-12-15 18:24:33.022 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-12-15 18:24:33.023 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-12-15 18:24:33.044 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:33.044 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:33.045 +03:00 [INF] Executed page /_Host in 24.017300000000002ms
+2019-12-15 18:24:33.046 +03:00 [INF] Executed endpoint '/_Host'
+2019-12-15 18:24:33.046 +03:00 [INF] Request finished in 28.1795ms 200 text/html; charset=utf-8
+2019-12-15 18:24:33.092 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_framework/blazor.server.js  
+2019-12-15 18:24:33.097 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2019-12-15 18:24:33.098 +03:00 [INF] Request finished in 5.9595ms 304 application/javascript
+2019-12-15 18:24:33.107 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-12-15 18:24:33.107 +03:00 [INF] The file /css/site.css was not modified
+2019-12-15 18:24:33.108 +03:00 [INF] Request finished in 1.0469ms 304 text/css
+2019-12-15 18:24:33.109 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+2019-12-15 18:24:33.109 +03:00 [INF] The file /css/open-iconic/font/css/open-iconic-bootstrap.min.css was not modified
+2019-12-15 18:24:33.110 +03:00 [INF] Request finished in 0.6639ms 304 text/css
+2019-12-15 18:24:33.130 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/fonts/open-iconic.woff  
+2019-12-15 18:24:33.130 +03:00 [INF] The file /css/open-iconic/font/fonts/open-iconic.woff was not modified
+2019-12-15 18:24:33.130 +03:00 [INF] Request finished in 0.46990000000000004ms 304 application/font-woff
+2019-12-15 18:24:33.143 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap/bootstrap.min.css  
+2019-12-15 18:24:33.143 +03:00 [INF] The file /css/bootstrap/bootstrap.min.css was not modified
+2019-12-15 18:24:33.143 +03:00 [INF] Request finished in 0.5049ms 304 text/css
+2019-12-15 18:24:33.176 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/negotiate text/plain;charset=UTF-8 0
+2019-12-15 18:24:33.177 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2019-12-15 18:24:33.177 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2019-12-15 18:24:33.178 +03:00 [INF] Request finished in 1.2995ms 200 application/json
+2019-12-15 18:24:33.334 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_blazor?id=QwKqPgj8xJkZX7HdNX3qMg  
+2019-12-15 18:24:33.334 +03:00 [INF] Executing endpoint '/_blazor'
+2019-12-15 18:24:33.373 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:33.375 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:34.897 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:34.897 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:34.928 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:47.397 +03:00 [INF] Entity Framework Core 3.0.1 initialized 'DatabaseContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2019-12-15 18:24:52.873 +03:00 [INF] Executing DbCommand [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE ((a."NormalizedUserName" = @__normalizedUserName_0) AND ((a."NormalizedUserName" IS NOT NULL) AND (@__normalizedUserName_0 IS NOT NULL))) OR ((a."NormalizedUserName" IS NULL) AND (@__normalizedUserName_0 IS NULL))
+LIMIT 1
+2019-12-15 18:24:53.505 +03:00 [INF] Executing DbCommand [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?' (DbType = Boolean), @p12='?', @p13='?' (DbType = Boolean), @p14='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2019-12-15 18:24:54.030 +03:00 [INF] Executing DbCommand [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "GithubUsers" ("AccessToken", "AvatarUrl", "HtmlUrl", "Login", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2019-12-15 18:24:54.225 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:54.226 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:54.226 +03:00 [INF] Authorization failed.
+2019-12-15 18:24:56.078 +03:00 [ERR] Error occurred executing workItem.
+MailKit.Security.AuthenticationException: 535: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials z9sm8426114ljm.40 - gsmtp
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.8 Username and Password not accepted. Learn more at
+5.7.8  https://support.google.com/mail/?p=BadCredentials z9sm8426114ljm.40 - gsmtp
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, Boolean doAsync, CancellationToken cancellationToken)
+   at Jija.Services.SmtpService.<>c__DisplayClass5_0.<<Send>b__0>d.MoveNext() in /Users/nikita/Documents/projects/Jija/Services/Util/SmtpService.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at Jija.Services.Background.QueuedHostedService.BackgroundProcessing(CancellationToken stoppingToken) in /Users/nikita/Documents/projects/Jija/Services/Background/QueuedHostedService.cs:line 36
+2019-12-15 18:25:15.014 +03:00 [INF] Executed endpoint '/_blazor'
+2019-12-15 18:25:15.016 +03:00 [INF] Request finished in 41680.7441ms 101 
+2019-12-15 18:36:34.505 +03:00 [INF] Starting up
+2019-12-15 18:36:35.010 +03:00 [INF] User profile is available. Using '/Users/nikita/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2019-12-15 18:36:35.370 +03:00 [INF] Now listening on: https://localhost:5001
+2019-12-15 18:36:35.371 +03:00 [INF] Now listening on: http://localhost:5000
+2019-12-15 18:36:35.373 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-12-15 18:36:35.373 +03:00 [INF] Hosting environment: Development
+2019-12-15 18:36:35.373 +03:00 [INF] Content root path: /Users/nikita/Documents/projects/Jija
+2019-12-15 18:36:35.908 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-12-15 18:36:35.986 +03:00 [INF] Executing endpoint '/_Host'
+2019-12-15 18:36:36.018 +03:00 [INF] Route matched with {page = "/_Host", action = "", controller = ""}. Executing page /_Host
+2019-12-15 18:36:36.045 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-12-15 18:36:36.049 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-12-15 18:36:36.257 +03:00 [INF] Authorization failed.
+2019-12-15 18:36:36.263 +03:00 [INF] Authorization failed.
+2019-12-15 18:36:36.292 +03:00 [INF] Executed page /_Host in 262.4202ms
+2019-12-15 18:36:36.293 +03:00 [INF] Executed endpoint '/_Host'
+2019-12-15 18:36:36.305 +03:00 [INF] Request finished in 403.0428ms 200 text/html; charset=utf-8
+2019-12-15 18:36:36.339 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap/bootstrap.min.css  
+2019-12-15 18:36:36.382 +03:00 [INF] Sending file. Request path: '/css/bootstrap/bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/bootstrap/bootstrap.min.css'
+2019-12-15 18:36:36.383 +03:00 [INF] Request finished in 44.7299ms 200 text/css
+2019-12-15 18:36:36.384 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-12-15 18:36:36.390 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/site.css'
+2019-12-15 18:36:36.390 +03:00 [INF] Request finished in 5.3981ms 200 text/css
+2019-12-15 18:36:36.400 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-15 18:36:36.408 +03:00 [INF] Request finished in 8.0715ms 404 
+2019-12-15 18:36:36.436 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+2019-12-15 18:36:36.439 +03:00 [INF] Sending file. Request path: '/css/open-iconic/font/css/open-iconic-bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css'
+2019-12-15 18:36:36.440 +03:00 [INF] Request finished in 4.234500000000001ms 200 text/css
+2019-12-15 18:36:36.458 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_framework/blazor.server.js  
+2019-12-15 18:36:36.478 +03:00 [INF] Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+2019-12-15 18:36:36.478 +03:00 [INF] Request finished in 20.2585ms 200 application/javascript
+2019-12-15 18:36:36.554 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/fonts/open-iconic.woff  
+2019-12-15 18:36:36.555 +03:00 [INF] Sending file. Request path: '/css/open-iconic/font/fonts/open-iconic.woff'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/fonts/open-iconic.woff'
+2019-12-15 18:36:36.556 +03:00 [INF] Request finished in 1.3419ms 200 application/font-woff
+2019-12-15 18:36:36.621 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/negotiate text/plain;charset=UTF-8 0
+2019-12-15 18:36:36.623 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-15 18:36:36.626 +03:00 [INF] Request finished in 3.7951ms 404 
+2019-12-15 18:36:36.638 +03:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M"
+2019-12-15 18:36:36.639 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2019-12-15 18:36:36.647 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2019-12-15 18:36:36.647 +03:00 [INF] Request finished in 26.867ms 200 application/json
+2019-12-15 18:36:36.705 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_blazor?id=J2sScl-1fo_6_bfe8klc2w&access_token=%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwNzg2OTM1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.Gq7d6WkxHQ5Xn41czIdiw9aDy73ZbPawJK60pq8225M%22  
+2019-12-15 18:36:36.824 +03:00 [INF] Successfully validated the token.
+2019-12-15 18:36:36.825 +03:00 [INF] Executing endpoint '/_blazor'
+2019-12-15 18:36:36.889 +03:00 [INF] Authorization was successful.
+2019-12-15 18:36:36.889 +03:00 [INF] Authorization was successful.
+2019-12-15 18:36:37.699 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/disconnect multipart/form-data; boundary=----WebKitFormBoundaryMfA9to9Bwp5ryWPJ 359
+2019-12-15 18:36:37.702 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2019-12-15 18:36:37.737 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2019-12-15 18:36:37.737 +03:00 [INF] Request finished in 38.4581ms 200 
+2019-12-15 18:36:37.739 +03:00 [INF] Executed endpoint '/_blazor'
+2019-12-15 18:36:37.740 +03:00 [INF] Request finished in 1034.7592ms 101 
+2019-12-15 18:36:47.489 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-15 18:36:47.509 +03:00 [INF] Request finished in 17.7752ms 404 
+2019-12-15 18:36:47.511 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-12-15 18:36:47.512 +03:00 [INF] Executing endpoint '/_Host'
+2019-12-15 18:36:47.513 +03:00 [INF] Route matched with {page = "/_Host", action = "", controller = ""}. Executing page /_Host
+2019-12-15 18:36:47.514 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-12-15 18:36:47.514 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-12-15 18:36:47.551 +03:00 [INF] Authorization failed.
+2019-12-15 18:36:47.551 +03:00 [INF] Authorization failed.
+2019-12-15 18:36:47.553 +03:00 [INF] Executed page /_Host in 39.9628ms
+2019-12-15 18:36:47.553 +03:00 [INF] Executed endpoint '/_Host'
+2019-12-15 18:36:47.553 +03:00 [INF] Request finished in 42.5435ms 200 text/html; charset=utf-8
+2019-12-15 18:36:47.584 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-12-15 18:36:47.587 +03:00 [INF] The file /css/site.css was not modified
+2019-12-15 18:36:47.587 +03:00 [INF] Request finished in 3.8724000000000003ms 304 text/css
+2019-12-15 18:36:47.594 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/fonts/open-iconic.woff  
+2019-12-15 18:36:47.595 +03:00 [INF] The file /css/open-iconic/font/fonts/open-iconic.woff was not modified
+2019-12-15 18:36:47.596 +03:00 [INF] Request finished in 1.9308ms 304 application/font-woff
+2019-12-15 18:36:47.630 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_framework/blazor.server.js  
+2019-12-15 18:36:47.631 +03:00 [INF] The file /_framework/blazor.server.js was not modified
+2019-12-15 18:36:47.631 +03:00 [INF] Request finished in 0.6564ms 304 application/javascript
+2019-12-15 18:36:47.640 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap/bootstrap.min.css  
+2019-12-15 18:36:47.640 +03:00 [INF] The file /css/bootstrap/bootstrap.min.css was not modified
+2019-12-15 18:36:47.641 +03:00 [INF] Request finished in 0.7121000000000001ms 304 text/css
+2019-12-15 18:36:47.649 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+2019-12-15 18:36:47.649 +03:00 [INF] The file /css/open-iconic/font/css/open-iconic-bootstrap.min.css was not modified
+2019-12-15 18:36:47.649 +03:00 [INF] Request finished in 0.505ms 304 text/css
+2019-12-15 18:36:47.681 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/negotiate text/plain;charset=UTF-8 0
+2019-12-15 18:36:47.681 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2019-12-15 18:36:47.682 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2019-12-15 18:36:47.683 +03:00 [INF] Request finished in 1.741ms 200 application/json
+2019-12-15 18:36:47.756 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_blazor?id=jeVL-bmvtNc6WmK_pGCCfA  
+2019-12-15 18:36:47.756 +03:00 [INF] Executing endpoint '/_blazor'
+2019-12-15 18:36:47.779 +03:00 [INF] Authorization failed.
+2019-12-15 18:36:47.779 +03:00 [INF] Authorization failed.
+2019-12-15 18:36:49.569 +03:00 [INF] Authorization failed.
+2019-12-15 18:36:49.570 +03:00 [INF] Authorization failed.
+2019-12-15 18:36:49.570 +03:00 [INF] Authorization failed.
+2019-12-15 18:37:04.789 +03:00 [INF] Entity Framework Core 3.0.1 initialized 'DatabaseContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2019-12-15 18:37:08.590 +03:00 [INF] Executing DbCommand [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName"
+FROM "AspNetUsers" AS a
+WHERE ((a."NormalizedUserName" = @__normalizedUserName_0) AND ((a."NormalizedUserName" IS NOT NULL) AND (@__normalizedUserName_0 IS NOT NULL))) OR ((a."NormalizedUserName" IS NULL) AND (@__normalizedUserName_0 IS NULL))
+LIMIT 1
+2019-12-15 18:37:08.956 +03:00 [INF] Executing DbCommand [Parameters=[@p0='?', @p1='?' (DbType = Int32), @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?', @p8='?', @p9='?', @p10='?', @p11='?' (DbType = Boolean), @p12='?', @p13='?' (DbType = Boolean), @p14='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2019-12-15 18:37:09.423 +03:00 [INF] Executing DbCommand [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "GithubUsers" ("AccessToken", "AvatarUrl", "HtmlUrl", "Login", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2019-12-15 18:37:10.028 +03:00 [INF] Authorization failed.
+2019-12-15 18:37:10.029 +03:00 [INF] Authorization failed.
+2019-12-15 18:37:10.029 +03:00 [INF] Authorization failed.
+2019-12-15 18:37:11.462 +03:00 [INF] Sent message to wololo301@gmail.com
+2019-12-15 18:37:24.843 +03:00 [INF] Executed endpoint '/_blazor'
+2019-12-15 18:37:24.845 +03:00 [INF] Request finished in 37086.988900000004ms 101 
