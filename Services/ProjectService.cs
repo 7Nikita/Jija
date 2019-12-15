@@ -3,17 +3,20 @@ using System.Threading.Tasks;
 using Jija.Models;
 using Jija.Models.Account;
 using Jija.Models.Core;
+using Jija.Services.Github;
 using Microsoft.EntityFrameworkCore;
 
 namespace Jija.Services
 {
-    public class ProjectService
+    public class ProjectService : IProjectService
     {
         private DatabaseContext _dbContext;
+        private IGithubService _githubService;
 
-        public ProjectService(DatabaseContext databaseContext)
+        public ProjectService(DatabaseContext databaseContext, IGithubService githubService)
         {
             _dbContext = databaseContext;
+            _githubService = githubService;
         }
 
         public async Task<bool> CreateProject(Project project)
@@ -28,6 +31,9 @@ namespace Jija.Services
             
             await _dbContext.Projects.AddAsync(project);
             await _dbContext.SaveChangesAsync();
+            
+            var result = await _githubService.CreateWebhook(project);
+            
             return true;
         }
         public async Task<Project> Find(int id) =>

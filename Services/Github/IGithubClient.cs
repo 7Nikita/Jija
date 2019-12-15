@@ -12,5 +12,6 @@ namespace Jija.Services.Github
         Task<OauthTokenDTO> GetOauthToken(string code);
         Task<UserInfoDTO> GetUserInfo();
         Task<List<RepositoryInfoDTO>> GetRepos();
+        Task<WebhookDTO> CreateWebhook(string owner, string repoName);
     }
 }

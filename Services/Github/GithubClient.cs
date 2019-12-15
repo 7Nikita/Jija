@@ -12,14 +12,21 @@ namespace Jija.Services.Github
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
 
+        
         public string Token { get; set; }
-        public string ApiUrl = "https://api.github.com";
-        public string OauthUrl = "https://github.com/login/oauth/access_token";
+        public string AzureUrl;
+        public string ApiUrl;
+        public string OauthUrl;
 
         public GithubClient(IConfiguration configuration, HttpClient httpClient)
         {
             _configuration = configuration;
             _httpClient = httpClient;
+
+            AzureUrl = _configuration["Routes:AzureURL"];
+            ApiUrl = _configuration["Routes:ApiUrl"];
+            OauthUrl = _configuration["Routes:OauthUrl"];
+            
         }
 
         public async Task<HttpResponse> MakeRequest(HttpRequestMessage requestMessage)
@@ -88,6 +95,38 @@ namespace Jija.Services.Github
             return await JsonSerializer.DeserializeAsync<List<RepositoryInfoDTO>>(response.Response);
         }
 
+        public async Task<WebhookDTO> CreateWebhook(string owner, string repoName)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Post, 
+                $"{ApiUrl}/repos/{owner}/{repoName}/hooks");
+            var content = new WebhookContent()
+            {
+                config = new WebhookContent.Config
+                {
+                    url = AzureUrl
+                },
+                events = new [] {"create", "push", "delete"},
+            };
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            var rawContent = new StringContent(JsonSerializer.Serialize(content, options));
+            request.Content = rawContent;
+
+            request.Headers.Add("Accept", "application/json");
+            request.Headers.Add("Authorization", $"token {Token}");
+            request.Headers.Add("User-Agent", "Jija");
+
+            var response = await MakeRequest(request);
+            if(response.ErrorMessage != null)
+            {
+                throw new HttpRequestException(response.ErrorMessage);
+            }
+            var createWebhookResponse = await JsonSerializer.DeserializeAsync<WebhookDTO>(response.Response);       
+            return createWebhookResponse;      
+        }
+        
         private HttpRequestMessage CreateRequestTo(string url)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, url);
@@ -97,6 +136,7 @@ namespace Jija.Services.Github
             request.Headers.Add("User-Agent", "Jija");
 
             return request;
-        } 
+        }
+
     }
 }

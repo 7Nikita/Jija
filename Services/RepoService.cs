@@ -7,12 +7,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Jija.Services
 {
-    public class RepoService
+    public class RepoService : IRepoService
     {
         private DatabaseContext _dbContext;
-        private ProjectService _projectService;
+        private IProjectService _projectService;
 
-        public RepoService(DatabaseContext databaseContext, ProjectService projectService)
+        public RepoService(DatabaseContext databaseContext, IProjectService projectService)
         {
             _dbContext = databaseContext;
             _projectService = projectService;

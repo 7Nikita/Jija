@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Jija.Models;
 using Jija.Models.Account;
+using Jija.Models.Core;
 using Jija.Models.Github;
 using Microsoft.Extensions.Configuration;
 
@@ -87,6 +88,20 @@ namespace Jija.Services.Github
             catch (HttpRequestException e)
             {
                 return new ResultDTO<List<RepositoryInfoDTO>>(e.Message);
+            }
+        }
+
+        public async Task<ResultDTO<WebhookDTO>> CreateWebhook(Project project)
+        {
+            try
+            {
+                _client.Token = project.Owner.GithubUser.AccessToken;
+                var response = await _client.CreateWebhook(project.Owner.GithubUser.Login, project.Repository.Name);
+                return new ResultDTO<WebhookDTO>(response);
+            }
+            catch (HttpRequestException e)
+            {
+                return new ResultDTO<WebhookDTO>(e.Message);
             }
         }
     }
