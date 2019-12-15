@@ -96,7 +96,7 @@ namespace Jija
             
             services.AddScoped<IGithubClient, GithubClient>();
             services.AddScoped<IGithubService, GithubService>();
-            services.AddScoped<RepoService>();
+            services.AddScoped<IRepoService, RepoService>();
             services.AddScoped<IProjectService, ProjectService>();
 
             services.AddScoped<JWTService>();
