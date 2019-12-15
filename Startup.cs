@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using System.Threading.Tasks;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Net.Http;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -17,7 +18,9 @@ using Jija.Models;
 using Jija.Models.Account;
 using Jija.Services;
 using Jija.Services.Github;
+using Jija.Services.Logger;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Jija
 {
@@ -103,7 +106,7 @@ namespace Jija
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -126,10 +129,13 @@ namespace Jija
 
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller}/{action=Index}/{id?}");
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
+
+            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "application_log.txt"));
+
         }
     }
 }
