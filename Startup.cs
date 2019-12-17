@@ -102,6 +102,8 @@ namespace Jija
             services.AddScoped<IRepoService, RepoService>();
             services.AddScoped<IProjectService, ProjectService>();
             services.AddSingleton<IMailing, SmtpService>();
+            services.AddScoped<IInviteService, InviteService>();
+            services.AddScoped<ITicketService, TicketService>();
 
             services.AddScoped<JWTService>();
             services.AddScoped<DbService>();
@@ -125,8 +127,10 @@ namespace Jija
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
             app.UseRouting();
+            
+            app.UseStatusCodePagesWithReExecute("/Error", "?statusCode={0}");
 
             app.UseAuthentication();
             app.UseAuthorization();
