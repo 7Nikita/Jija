@@ -2,6 +2,14 @@ using Jija.Models.Account;
 
 namespace Jija.Models.Core
 {
+
+    public enum InviteStatus
+    {
+        Pending,
+        Accepted,
+        Declined
+    }
+    
     public class Invite
     {
         public int Id { get; set; }
@@ -15,5 +23,7 @@ namespace Jija.Models.Core
         public int ProjectId { get; set; }
 
         public Project Project { get; set; }
+        
+        public InviteStatus Status { get; set; }
     }
 }
