@@ -1,0 +1,79 @@
+@page "/new_porject"
+
+@attribute [Authorize]
+
+@using Jija.Models.Core
+@using Jija.Services
+@using Jija.Pages.Components
+
+@inject NavigationManager NavigationManager
+@inject DbService DbService
+@inject IRepoService RepoService
+@inject IProjectService ProjectService
+
+<div class="create_project_container">
+      @if(repos == null || repos.Count == 0)
+      {
+          <p>): There are no added repos :(</p>
+      }
+      else
+      {
+          <div class="create_project_title">
+              <h2>Create a project</h2>
+          </div>
+          <EditForm Model="@form" OnValidSubmit="@OnCreateProject" class="login_border">
+              <DataAnnotationsValidator/>
+              <ValidationSummary/>
+              <div class="form-check mt-5">
+                  <label>Name</label><br/>
+                  <InputText class="form-control" id="inputProjectName" placeholder="project name" @bind-Value="form.Name"/>
+              </div>
+
+              <div class="form-check mt-3 ">
+                  <label>Select project</label><br/>
+                  <InputSelectNumber class="custom-select" id="repository" @bind-Value="form.RepositoryId">
+                      @foreach (var repository in repos)
+                      {
+                          <option value="@repository.Id">@repository.Name</option>
+                      }
+                  </InputSelectNumber>
+              </div>
+
+              <div class="form-check mt-3">
+                  <button type="submit" class="btn btn-success bth-width"> Create </button>
+              </div>
+          </EditForm>
+      }
+</div>
+
+@code {
+    
+    Models.Account.User user;
+    List<Repository> repos;
+    
+    NewProjectForm form = new NewProjectForm();
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = await DbService.GetUserAndRepos();
+        repos = user.Repositories;
+    }
+
+    private async Task OnCreateProject()
+    {
+        var repo = await RepoService.FindRepo(form.RepositoryId);
+
+        var project = new Project
+        {
+            Name = form.Name,
+            Owner = user,
+            Repository = repo
+        };
+        
+        if (await ProjectService.CreateProject(project))
+            StateHasChanged();
+        
+        NavigationManager.NavigateTo("/projects");
+    }
+    
+}

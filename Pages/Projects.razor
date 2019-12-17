@@ -11,38 +11,89 @@
 @inject IRepoService RepoService
 
 <div class="p-2" style="flex:1;">
-    <div class="underline_nav">
-        <nav class="d-flex">
-            <a class="nav_item nav_item_active">
-                 Projects
-            </a>
-        </nav>
-    </div>
+        <div class="underline_nav">
+            <nav class="d-flex">
+                <a class="nav_item nav_item_active">
+                     Projects
+                </a>
+            </nav>
+            <div>
+                <a class="btn btn-success" href="/new_porject">Create</a>
+            </div>
+        </div>
+</div>
+
+<div>
+            @if(ownedProjects == null) 
+            {
+                <p>Loading...</p>
+            }
+            else if(ownedProjects.Count == 0)
+            {
+                <p>You don`t have any projects :(</p>
+            }
+             else
+             {
+                 @if (ownedProjects != null)
+                 {
+                     @foreach (var repo in ownedProjects)
+                     {
+                         <ul class="list-group">
+                             <li class="border-bottom py-4">
+                                 <div class="project_card ">
+                                     <div>
+                                         <span class="project_chips project_chips_owner">Owner</span>
+                                     </div>
+                                     <div class="project_card__title">
+                                         <a href="/projects/@repo.Id">@repo.Name</a>
+                                     </div>
+                                     <div class="project_card_descriprtion">
+                                         @repo.Repository.Description
+                                     </div>
+                                 </div>
+                             </li>
+                         </ul>
+                     }
+                 }
+                 @if (contributedProjects != null)
+                 {
+                     @foreach (var repo in contributedProjects)
+                     {
+                         <ul class="list-group">
+                             <li class="border-bottom py-4">
+                                 <div class="project_card ">
+                                     <div>
+                                         <span class="project_chips project_chips_contributor">Contributor</span>
+                                     </div>
+                                     <div class="project_card__title">
+                                         <a href="/projects/@repo.Id">@repo.Name</a>
+                                     </div>
+                                     <div class="project_card_descriprtion">
+                                         @repo.Repository.Description
+                                     </div>
+                                 </div>
+                             </li>
+                         </ul>
+                     }
+                 }
+             }
 </div>
 
 @code {
 
     Models.Account.User user;
     
+    List<Repository> repos = new List<Repository>();
     List<Project> ownedProjects;
-    List<Project> contributedProjects;
-    List<Invite> invites;
-    List<Repository> repos;
+    List<Project> contributedProjects = new List<Project>();
 
     protected override async Task OnInitializedAsync()
     {
-        contributedProjects = new List<Project>();
-        repos = new List<Repository>();
-
         user = await DbService.GetAll();
 
-        ownedProjects = user.OwnedProjects;
         repos = user.Repositories;
-        invites = user.Invites;
-        
+        ownedProjects = user.OwnedProjects;
         user.ContributedProjects.ForEach(p => contributedProjects.Add(p.Project));
     }
 
-    
-    
 }

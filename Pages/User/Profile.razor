@@ -11,6 +11,7 @@
 
 @inject JWTService JWTService
 @inject IGithubService GithubService
+@inject IRepoService RepoService
 @inject UserManager<User> UserManager
 @inject DatabaseContext DatabaseContext
 @inject NavigationManager NavigationManager
@@ -55,29 +56,29 @@
     private string githubLogin;
     
     private List<RepositoryInfoDTO> repos = new List<RepositoryInfoDTO>();
-    
+
     protected override async Task OnInitializedAsync()
     {
         var authState = await DbService.GetAuthenticationStateAsync();
-        
+
         _user = DatabaseContext.Users
             .Include(u => u.GithubUser)
             .Where(u => u.UserName == authState.User.Identity.Name)
             .Select(u => u)
             .SingleOrDefault();
-        
+
         userName = _user.UserName;
         userEmail = _user.Email;
-        
+
         githubToken = _user.GithubUser.AccessToken;
         githubAvatarUrl = _user.GithubUser.AvatarUrl;
         githubLogin = _user.GithubUser.Login;
-        
+
         githubOauthUrl = GithubService.GetOauthRequestUrl();
 
         var uriBuilder = new UriBuilder(NavigationManager.Uri);
         var query = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
-        if(query["code"] != null)
+        if (query["code"] != null)
         {
             await GetGithubToken(query["code"]);
         }

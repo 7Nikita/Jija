@@ -1,0 +1,67 @@
+@page "/new_ticket/{Id:int}"
+
+@attribute [Authorize]
+
+@using Jija.Models.Core
+@using Jija.Services
+@using Jija.Pages.Components
+
+@inject NavigationManager NavigationManager
+@inject DbService DbService
+@inject ITicketService TicketService
+@inject IProjectService ProjectService
+
+
+<div class="create_project_container">
+          <div class="create_project_title">
+              <h2>Create a ticket</h2>
+          </div>
+          <EditForm Model="@form" OnValidSubmit="@OnCreateTicket" class="login_border">
+              <DataAnnotationsValidator/>
+              <ValidationSummary/>
+              <div class="form-check mt-5">
+                  <label>Name</label><br/>
+                  <InputText class="form-control" id="inputTicketName" placeholder="ticket name" @bind-Value="form.Name"/>
+              </div>
+              <div class="form-check mt-5">
+                  <label>Description</label><br/>
+                  <InputText class="form-control" id="inputTicketDesc" placeholder="ticket description" @bind-Value="form.Description"/>
+              </div>
+
+              <div class="form-check mt-3 ">
+                  <label>Select status</label><br/>
+                  <InputSelectNumber class="custom-select" id="status" @bind-Value="form.Status">
+                    <option value="@TicketStatus.Opened">Opened</option>
+                    <option value="@TicketStatus.InProgress">InProgress</option>
+                    <option value="@TicketStatus.Done">Done</option>
+                  </InputSelectNumber>
+              </div>
+
+              <div class="form-check mt-3">
+                  <button type="submit" class="btn btn-success bth-width"> Create </button>
+              </div>
+          </EditForm>
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    
+    Models.Account.User user;
+    NewTicketForm form = new NewTicketForm();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        user = await DbService.GetUserAndRepos();
+    }
+    
+    private async Task OnCreateTicket()
+    {
+        var project = await ProjectService.Find(Id);
+        var ticket = await TicketService.CreateTicket(project, form.Name, form.Description, form.Status);
+        StateHasChanged();
+        
+        NavigationManager.NavigateTo($"/projects/{Id}");
+    }
+    
+}

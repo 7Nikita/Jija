@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error</h1>
+<div class="hit-the-floor">@ViewBag.StatusCode</div>
+<h2>@ViewBag.ErrorMessage</h2>
+<p>
+    RouteOfException  : @ViewBag.RouteOfException
+</p>
+
+

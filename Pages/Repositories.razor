@@ -84,14 +84,5 @@
             StateHasChanged();
         }
     }
-
-    private async Task DeleteRepository(Repository repository)
-    {
-        var success = await RepoService.DeleteRepo(repository);
-        if(success)
-        {
-            StateHasChanged();
-        }
-    }
     
 }

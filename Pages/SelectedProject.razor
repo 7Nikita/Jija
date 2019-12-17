@@ -1,0 +1,163 @@
+@page "/projects/{Id:int}"
+
+@attribute [Authorize]
+
+@using Jija.Models.Core
+@using Jija.Models
+@using Jija.Services
+@using Jija.Models.Account
+
+@inject DbService DbService
+@inject IProjectService ProjectService
+@inject IRepoService RepoService
+@inject ITicketService TicketService
+
+@if(errorMessage != null)
+{
+    <h1>@errorMessage</h1>
+}
+else
+{
+    <div class=" invite-form">
+        <h3>Invite</h3>
+        <form class=" d-flex align-items-end">
+            <div class="mt-3 ">
+                <label>Select user</label><br/>
+                <select class="selectpicker" data-live-search="true">
+                    <option>Deni</option>
+                    <option>Niki ta</option>
+                    <option>Moo bot</option>
+                </select>
+            </div>
+            <div class="mt-3">
+                <input class="btn btn-success " type="button" value="Invite"/>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-success 2-75" href="/new_ticket/@Id">Create ticket</a>
+    </div>
+
+    <div class="tasklist_form">
+        <div class="task-list mr-3">
+            <div class="task-list__header">
+                <div class="tasklistname">
+                    Opened
+                </div>
+            </div>
+            @if (openedTickets != null)
+            {
+                @foreach (var t in openedTickets)
+                {
+                    <div class="p-3">
+                        <div class="task_form">
+                            <div class="task_title">
+                                @t.Name
+                            </div>
+
+                            <div class="task_description">
+                                @t.Description
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="task-list mr-3">
+            <div class="task-list__header">
+                <div class="tasklistname">
+                    In Progress
+                </div>
+            </div>
+            @if (progressTickets != null)
+            {
+                @foreach (var t in progressTickets)
+                {
+                    <div class="p-3">
+                        <div class="task_form">
+                            <div class="task_title">
+                                @t.Name
+                            </div>
+
+                            <div class="task_description">
+                                @t.Description
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="task-list mr-3">
+            <div class="task-list__header">
+                <div class="tasklistname">
+                    Done
+                </div>
+            </div>
+            @if (doneTickets != null)
+            {
+                @foreach (var t in doneTickets)
+                {
+                    <div class="p-3">
+                        <div class="task_form">
+                            <div class="task_title">
+                                @t.Name
+                            </div>
+
+                            <div class="task_description">
+                                @t.Description
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+
+    private string errorMessage = null;
+
+    List<Ticket> openedTickets;
+    List<Ticket> progressTickets;
+    List<Ticket> doneTickets;
+    
+    private bool isOwner = false;
+
+    
+    private Project project;
+    private Models.Account.User user;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        project = await ProjectService.Find(Id);
+        if(project == null)
+        {
+            errorMessage = "Project does not exist";
+            return;
+        }
+        
+        user = await DbService.GetUser();
+        if(project.Owner.Id != user.Id && !(await ProjectService.IsContributor(project, user)))
+        {
+            errorMessage = "Access denied";
+            return;
+        }
+        
+        if (project.Owner.Id == user.Id)
+        {
+            isOwner = true;
+        }
+
+        openedTickets = await TicketService.FindTicketByStatus(project, TicketStatus.Opened);
+        progressTickets = await TicketService.FindTicketByStatus(project, TicketStatus.InProgress);
+        doneTickets = await TicketService.FindTicketByStatus(project, TicketStatus.Done);
+    }
+
+}
