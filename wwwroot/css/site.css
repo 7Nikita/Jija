@@ -239,6 +239,7 @@ app {
         display: flex;
         overflow-x: auto;
         overflow-y: hidden;
+        align-items: center;
         border-bottom: 1px solid #e1e4e8;
         justify-content: space-between;
     }
@@ -331,5 +332,102 @@ app {
 
     .bth-width{
         width: 200px;
+    }
+
+    .create_project_container{
+        max-width: 700px;
+        margin: 50px auto;
+    }
+
+    .create_project_title{
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e1e4e8;;
+    }
+
+    .project_card{
+        max-width: 250px;
+        background:
+                aliceblue;
+        padding: 10px 20px;
+        border-radius: 10px;
+        margin: 10px;
+
+    }
+
+    .project_chips{
+        display: inline-block;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        padding: 4px 10px;
+        border-radius: 20px;
+    }
+
+    .project_chips_owner{
+        background-color: #525457;
+        color: white;
+    }
+
+    .project_chips_contributor{
+        background-color: #311a5f;
+        color: white;
+    }
+
+    .project_card__title{
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .project_card_descriprtion{
+        font-size: 16px;
+        color: gray;
+    }
+
+    .task-list {
+        min-width: 355px;
+        max-width: 355px;
+        border-width: 1px !important;
+        border-radius: 6px !important;
+        background-color: #eff1f3;
+        margin: 25px;
+    }
+
+    .task-list__header {
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        border-bottom: 3px solid
+        cornflowerblue;
+        justify-content: center;
+        border-radius: 15px;
+    }
+
+    .tasklistname {
+        font-size: 20px;
+        padding: 3px 10px;
+    }
+
+    .invite-form{
+        border: 1px solid;
+        max-width: 350px;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 10px 40px 25px;
+    }
+
+    .tasklist_form{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 100px;
+    }
+
+    .task_form{
+        background:white;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: solid 2px antiquewhite;
+        padding: 10px;
     }
 }
