@@ -34,6 +34,16 @@ namespace Jija.Services
             await _dbContext.SaveChangesAsync();
             
             var result = await _githubService.CreateWebhook(project);
+            var webhook = new Webhook
+            {
+                Id = result.Response.id,
+                Name = result.Response.name,
+                Type = result.Response.type,
+                Url = result.Response.config.url,
+                Project = project,
+            };
+            await _dbContext.Webhooks.AddAsync(webhook);
+            await _dbContext.SaveChangesAsync();
             return true;
         }
         public async Task<Project> Find(int id) =>
