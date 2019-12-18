@@ -94,7 +94,7 @@ else
 
                                 <div class="task_menu">
                                     <a href="/edit_ticket/@Id/@t.Id"><i class="fas fa-edit"></i></a>
-                                    <i class="fas fa-times"></i>
+                                    <button class="fas fa-times" @onclick="@(async e => await OnTicketDelete(t))"></button>
                                 </div>
                             </div>
 
@@ -124,7 +124,7 @@ else
 
                                 <div class="task_menu">
                                     <a href="/edit_ticket/@Id/@t.Id"><i class="fas fa-edit"></i></a>
-                                    <i class="fas fa-times"></i>
+                                    <button class="fas fa-times" @onclick="@(async e => await OnTicketDelete(t))"></button>
                                 </div>
                             </div>
 
@@ -136,6 +136,22 @@ else
                 }
             }
         </div>
+
+        <div class="users_form">
+                <h3 class="users_titles">Users</h3>
+                @if (contributors != null)
+                {
+                    @foreach (var contributor in contributors)
+                    {
+                        <div class="user_card">
+                            <div><img class="user_img" src="@contributor.Contributor.GithubUser.AvatarUrl"/></div>
+                            <div>@contributor.Contributor.UserName</div>
+                            <div><i class="fas fa-times"></i></div>
+                        </div>
+                    }
+                }
+        </div>
+                    
     </div>
 }
 @code {
@@ -150,6 +166,8 @@ else
     List<Ticket> openedTickets;
     List<Ticket> progressTickets;
     List<Ticket> doneTickets;
+
+    List<ProjectUser> contributors;
     
     private bool isOwner = false;
     private Project project;
@@ -176,9 +194,9 @@ else
             isOwner = true;
         }
         
-        openedTickets = await TicketService.FindTicketByStatus(project, TicketStatus.Opened);
-        progressTickets = await TicketService.FindTicketByStatus(project, TicketStatus.InProgress);
-        doneTickets = await TicketService.FindTicketByStatus(project, TicketStatus.Done);
+        await ReloadTickets();
+
+        //contributors = project.Contributors;
     }
     
     private async Task OnInvite()
@@ -196,8 +214,16 @@ else
         var success = await TicketService.DeleteTicket(ticket);
         if(success)
         {
+            await ReloadTickets();
             StateHasChanged();
         }
+    }
+
+    private async Task ReloadTickets()
+    {
+        openedTickets = await TicketService.FindTicketByStatus(project, TicketStatus.Opened);
+        progressTickets = await TicketService.FindTicketByStatus(project, TicketStatus.InProgress);
+        doneTickets = await TicketService.FindTicketByStatus(project, TicketStatus.Done);
     }
 
 }
