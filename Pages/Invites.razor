@@ -1,0 +1,84 @@
+@page "/invites"
+
+@attribute [Authorize]
+
+@using Jija.Models.Core
+@using Jija.Models
+@using Jija.Services
+@using Jija.Models.Account
+
+@inject DbService DbService
+@inject IInviteService InviteService
+
+<div class="p-2" style="flex:1;">
+    <div class="underline_nav">
+        <nav class="d-flex">
+            <a class="nav_item nav_item_active">
+                 Invites
+            </a>
+        </nav>
+    </div>
+</div>
+
+<div class="d-flex">
+    <div class="p-2" style="flex:1;">
+            @if(invites == null) 
+            {
+                <p>Loading...</p>
+            }
+            else if(invites.Count == 0)
+            {
+                <p>You don`t have any inites :(</p>
+            }
+            else
+            {
+                @foreach(var invite in invites)
+                {
+                    <ul class="list-group">
+                        <li class="border-bottom py-4">
+                            <div>
+                                <h3 class="list_item__title">@invite.Project.Name</h3>
+                                <h4 class="list_item__description">@invite.Message</h4>
+                                <h5 class="list_item__description">@invite.Status</h5>
+                                <button class="btn btn-success" @onclick="@(async e => await AcceptInvite(invite))">Accept</button>
+                                <button class="btn btn-danger" @onclick="@(async e => await DeclineInvite(invite))">Decline</button>
+                             </div>
+                        </li>
+                    </ul>
+                }
+            }
+    </div>
+</div>
+
+
+@code {
+
+    private Models.Account.User user;
+
+    private List<Invite> invites;
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = await DbService.GetAll();
+        invites = user.Invites;
+    }
+
+    private async Task AcceptInvite(Invite invite)
+    {
+        var project = invite.Project;
+        var success = await InviteService.AcceptInvite(invite);
+        if(success)
+        {
+            StateHasChanged();
+        }
+    }
+
+    private async Task DeclineInvite(Invite invite)
+    {
+        var success = await InviteService.RemoveInvite(invite);
+        if(success)
+        {
+            StateHasChanged();
+        }
+    }
+}

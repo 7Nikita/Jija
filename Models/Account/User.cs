@@ -21,6 +21,9 @@ namespace Jija.Models.Account
         public List<ProjectUser> ContributedProjects { get; set; }
         
         public GithubUser GithubUser { get; set; }
+        
+        public List<Assignee> Tickets { get; set; }
+
 
     }
 }

@@ -42,6 +42,11 @@ namespace Jija.Models
             builder.Entity<Assignee>().HasKey(asg => new {asg.AssigneeId, asg.TicketId});
 
             builder.Entity<Assignee>()
+                .HasOne(asg => asg.AssignedUser)
+                .WithMany(asg => asg.Tickets)
+                .HasForeignKey(t => t.AssigneeId);
+            
+            builder.Entity<Assignee>()
                 .HasOne(asg => asg.Ticket)
                 .WithMany(ticket => ticket.Assignees)
                 .HasForeignKey(asg => asg.TicketId);

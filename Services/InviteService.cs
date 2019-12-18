@@ -21,7 +21,7 @@ namespace Jija.Services
             _userManager = userManager;
         }
 
-        public async Task<bool> CreateInvite(Project project, string username)
+        public async Task<bool> CreateInvite(Project project, string username, string msg)
         {
             var user = await _userManager.FindByNameAsync(username);
             if (user == null)
@@ -42,7 +42,8 @@ namespace Jija.Services
             {
                 Project = project,
                 UserId = user.Id,
-                Status = InviteStatus.Pending
+                Status = InviteStatus.Pending,
+                Message = msg
             };
 
             await _dbContext.Invites.AddAsync(inv);
