@@ -97,6 +97,15 @@ namespace Jija.Services.Github
             {
                 _client.Token = project.Owner.GithubUser.AccessToken;
                 var response = await _client.CreateWebhook(project.Owner.GithubUser.Login, project.Repository.Name);
+                var webhook = new Webhook
+                {
+                    Id = response.id,
+                    Name = response.name,
+                    Type = response.type,
+                    Url = response.config.url
+                };
+                await _dbContext.Webhooks.AddAsync(webhook);
+                await _dbContext.SaveChangesAsync();
                 return new ResultDTO<WebhookDTO>(response);
             }
             catch (HttpRequestException e)

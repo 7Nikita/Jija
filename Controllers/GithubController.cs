@@ -1,17 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebHooks;
 using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
+using Jija.Models.Github;
+using Jija.Services;
 
 namespace Jija.Controllers
 {
-    public class GitHubController : ControllerBase
+    public class GitHubController : Controller
     {
-        [Route("/GitHubController/Webhook/{id?}")]
+        private IWebhookService _webhookService;
+        public GitHubController(IWebhookService webhookService)
+        {
+            _webhookService = webhookService;
+        }
+        
         [HttpPost]
         [IgnoreAntiforgeryToken]
-        public string Webhook([FromBody] string content)
+        public async Task<IActionResult> Push([FromBody] PushWebhookDTO pushWebhookDto)
         {
-            return content;
+            await _webhookService.ProcessPushWebhook(pushWebhookDto);
+            return Ok();
         }
     }
 }

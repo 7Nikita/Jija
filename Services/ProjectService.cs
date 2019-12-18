@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Jija.Models;
 using Jija.Models.Account;
 using Jija.Models.Core;
+using Jija.Models.Github;
 using Jija.Services.Github;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,7 +34,6 @@ namespace Jija.Services
             await _dbContext.SaveChangesAsync();
             
             var result = await _githubService.CreateWebhook(project);
-            
             return true;
         }
         public async Task<Project> Find(int id) =>

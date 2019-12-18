@@ -103,9 +103,9 @@ namespace Jija.Services.Github
             {
                 config = new WebhookContent.Config
                 {
-                    url = AzureUrl
+                    url = $"{AzureUrl}/GitHub/Push",
                 },
-                events = new [] {"create", "push", "delete"},
+                events = new [] {"push"},
             };
             var options = new JsonSerializerOptions
             {
