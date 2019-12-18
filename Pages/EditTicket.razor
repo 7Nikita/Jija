@@ -1,0 +1,78 @@
+@page "/edit_ticket/{ProjectId:int}/{TicketId:int}"
+
+@attribute [Authorize]
+
+@using Jija.Models.Core
+@using Jija.Services
+@using Jija.Pages.Components
+
+
+@inject NavigationManager NavigationManager
+@inject DbService DbService
+@inject ITicketService TicketService
+@inject IProjectService ProjectService
+
+<div class="create_project_container">
+          <div class="create_project_title">
+              <h2>Update a ticket</h2>
+          </div>
+          <EditForm Model="@editForm" OnValidSubmit="@OnTicketUpdate" class="login_border">
+              <DataAnnotationsValidator/>
+              <ValidationSummary/>
+              <div class="form-check mt-5">
+                  <label>Name</label><br/>
+                  <InputText class="form-control" id="inputTicketName" placeholder="ticket name" @bind-Value="editForm.Name"/>
+              </div>
+              <div class="form-check mt-5">
+                  <label>Description</label><br/>
+                  <InputText class="form-control" id="inputTicketDesc" placeholder="ticket description" @bind-Value="editForm.Description"/>
+              </div>
+
+              <div class="form-check mt-3 ">
+                  <label>Select status</label><br/>
+                  <InputSelectNumber class="custom-select" id="status" @bind-Value="editForm.Status">
+                    <option value="@TicketStatus.Opened">Opened</option>
+                    <option value="@TicketStatus.InProgress">InProgress</option>
+                    <option value="@TicketStatus.Done">Done</option>
+                  </InputSelectNumber>
+              </div>
+
+              <div class="form-check mt-3">
+                  <button type="submit" class="btn btn-success bth-width"> Update </button>
+              </div>
+          </EditForm>
+</div>
+
+@code {
+
+    [Parameter]
+    public int ProjectId { get; set; }
+    
+    [Parameter]
+    public int TicketId { get; set; }
+    
+    Ticket _ticket;
+    Project _project;
+    EditTicketForm editForm = new EditTicketForm();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        _project = await ProjectService.Find(ProjectId);
+        _ticket = await TicketService.FindTicket(_project, TicketId);
+
+        editForm.Name = _ticket.Name;
+        editForm.Description = _ticket.Description;
+        editForm.Status = _ticket.Status;
+    }
+    
+    private async Task OnTicketUpdate()
+    {
+        var success = await TicketService.UpdateTicket(_ticket, editForm.Name, editForm.Description, editForm.Status);
+        if (success)
+        {
+            StateHasChanged();
+            NavigationManager.NavigateTo($"/projects/{ProjectId}");
+        }
+    }
+
+}

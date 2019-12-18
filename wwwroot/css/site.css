@@ -430,4 +430,12 @@ app {
         border: solid 2px antiquewhite;
         padding: 10px;
     }
+
+    .task_menu{
+        margin-left: auto;
+    }
+
+    .task_title{
+        display: flex;
+    }
 }

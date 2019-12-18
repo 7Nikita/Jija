@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Jija.Models;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 using Jija.Models.Account;
 using Jija.Models.Core;
@@ -53,20 +54,29 @@ namespace Jija.Services
                 .Where(t => t.ProjectId == project.Id && t.Status == status)
                 .ToListAsync();
 
-        public async Task UpdateTicket(Ticket ticket, string name, string desc, TicketStatus status)
+        public async Task<Ticket> FindTicket(Project project, int id) =>
+            await _dbContext.Tickets
+                .Where(t => t.ProjectId == project.Id && t.Id == id)
+                .SingleOrDefaultAsync();
+
+        public async Task<bool> UpdateTicket(Ticket ticket, string name, string desc, TicketStatus status)
         {
             ticket.Name = name;
             ticket.Description = desc;
             ticket.Status = status;
 
             await _dbContext.SaveChangesAsync();
+
+            return true;
         }
 
-        public async Task DeleteTicket(Ticket ticket)
+        public async Task<bool> DeleteTicket(Ticket ticket)
         {
             _dbContext.Tickets.Remove(ticket);
 
             await _dbContext.SaveChangesAsync();
+
+            return true;
         }
 
         public async Task<bool> AddUser(Ticket ticket, User user)
