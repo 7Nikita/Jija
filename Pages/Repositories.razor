@@ -70,6 +70,7 @@
     private async Task GetRepositories()
     {
         var result = await GithubService.GetUserRepositories(_user);
+        
         if(result.ErrorMessage == null)
         {
             result.Response.ForEach(r => repos.Add(r));

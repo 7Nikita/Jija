@@ -22,7 +22,6 @@ namespace Jija.Services
         {
             if (_dbContext.Repositories.SingleOrDefault(r => r.Id == id && r.Owner.Id == owner.Id) != null)
             {
-                // Todo: Toast
                 return false;
             }
 
@@ -46,7 +45,6 @@ namespace Jija.Services
             var exists = await _projectService.Find(repository);
             if (exists != null)
             {
-                // Todo: Toast
                 return false;
             }
 

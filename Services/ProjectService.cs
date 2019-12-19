@@ -26,7 +26,6 @@ namespace Jija.Services
 
             if (exists != null)
             {
-                // Todo: Toast
                 return false;
             }
             
@@ -54,6 +53,7 @@ namespace Jija.Services
                 .ThenInclude(inv => inv.User)
                 .Include(p => p.Contributors)
                 .ThenInclude(contr => contr.Contributor)
+                .ThenInclude(g => g.GithubUser)
                 .Include(p => p.Tickets)
                 .ThenInclude(ticket => ticket.Assignees)
                 .ThenInclude(asg => asg.AssignedUser)

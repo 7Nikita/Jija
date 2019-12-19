@@ -35,13 +35,9 @@ namespace Jija.Services
                 .SingleOrDefaultAsync();
             
             var ticketName = match.Groups[1].Value;
-            var ticket = await _ticketService.FindTicket(repo.Project, ticketName);
-            
-            if (ticket == null)
-            {
-                ticket = await _ticketService.CreateTicket(repo.Project, ticketName, 
-                    "This ticket was created automatically. Please, adjust.", TicketStatus.Opened);
-            }
+            var ticket = await _ticketService.FindTicket(repo.Project, ticketName) ?? 
+                         await _ticketService.CreateTicket(repo.Project, ticketName, 
+                             "This ticket was created automatically.", TicketStatus.Opened);
         }
     }
 }

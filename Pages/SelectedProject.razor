@@ -146,7 +146,7 @@ else
                         <div class="user_card">
                             <div><img class="user_img" src="@contributor.Contributor.GithubUser.AvatarUrl"/></div>
                             <div>@contributor.Contributor.UserName</div>
-                            <div><i class="fas fa-times"></i></div>
+                            <button class="fas fa-times" @onclick="@(async e => await RemoveContributor(@contributor))"></button>
                         </div>
                     }
                 }
@@ -195,8 +195,8 @@ else
         }
         
         await ReloadTickets();
-
-        //contributors = project.Contributors;
+        
+        contributors = project.Contributors;
     }
     
     private async Task OnInvite()
@@ -226,4 +226,10 @@ else
         doneTickets = await TicketService.FindTicketByStatus(project, TicketStatus.Done);
     }
 
+    private async Task RemoveContributor(ProjectUser contributor)
+    {
+        await ProjectService.RemoveContributor(contributor);
+        StateHasChanged();
+    }
+    
 }
