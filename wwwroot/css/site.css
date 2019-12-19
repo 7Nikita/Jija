@@ -420,7 +420,7 @@ app {
     .tasklist_form{
         display: flex;
         justify-content: space-between;
-        margin: 0 100px;
+        margin: 0 10px;
     }
 
     .task_form{

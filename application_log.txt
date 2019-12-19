@@ -25609,3 +25609,228 @@ WHERE ((t."ProjectId" = @__project_Id_0) AND (@__project_Id_0 IS NOT NULL)) AND 
 2019-12-19 16:47:26.904 +03:00 [INF] Request finished in 17911.4627ms 101 
 2019-12-19 16:47:26.937 +03:00 [INF] Executed endpoint 'Blazor disconnect'
 2019-12-19 16:47:26.937 +03:00 [INF] Request finished in 53.9286ms 200 
+2019-12-19 17:12:03.629 +03:00 [INF] Starting up
+2019-12-19 17:12:04.386 +03:00 [INF] User profile is available. Using '/Users/nikita/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2019-12-19 17:12:05.084 +03:00 [INF] Now listening on: https://localhost:5001
+2019-12-19 17:12:05.094 +03:00 [INF] Now listening on: http://localhost:5000
+2019-12-19 17:12:05.112 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2019-12-19 17:12:05.113 +03:00 [INF] Hosting environment: Development
+2019-12-19 17:12:05.113 +03:00 [INF] Content root path: /Users/nikita/Documents/projects/Jija
+2019-12-19 17:12:05.771 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2019-12-19 17:12:05.873 +03:00 [INF] Executing endpoint '/_Host'
+2019-12-19 17:12:05.904 +03:00 [INF] Route matched with {page = "/_Host", action = "", controller = ""}. Executing page /_Host
+2019-12-19 17:12:05.935 +03:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2019-12-19 17:12:05.941 +03:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2019-12-19 17:12:06.186 +03:00 [INF] Authorization failed.
+2019-12-19 17:12:06.192 +03:00 [INF] Authorization failed.
+2019-12-19 17:12:06.228 +03:00 [INF] Executed page /_Host in 308.0556ms
+2019-12-19 17:12:06.279 +03:00 [INF] Executed endpoint '/_Host'
+2019-12-19 17:12:06.300 +03:00 [INF] Request finished in 535.6239ms 200 text/html; charset=utf-8
+2019-12-19 17:12:06.337 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap/bootstrap.min.css  
+2019-12-19 17:12:06.402 +03:00 [INF] Sending file. Request path: '/css/bootstrap/bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/bootstrap/bootstrap.min.css'
+2019-12-19 17:12:06.403 +03:00 [INF] Request finished in 65.6815ms 200 text/css
+2019-12-19 17:12:06.405 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+2019-12-19 17:12:06.406 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/site.css'
+2019-12-19 17:12:06.407 +03:00 [INF] Request finished in 1.5955000000000001ms 200 text/css
+2019-12-19 17:12:06.408 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/bootstrap-select.css  
+2019-12-19 17:12:06.409 +03:00 [INF] Sending file. Request path: '/css/bootstrap-select.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/bootstrap-select.css'
+2019-12-19 17:12:06.410 +03:00 [INF] Request finished in 1.7040000000000002ms 200 text/css
+2019-12-19 17:12:06.410 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/awesome/css/all.css  
+2019-12-19 17:12:06.414 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_framework/blazor.server.js  
+2019-12-19 17:12:06.420 +03:00 [INF] Sending file. Request path: '/lib/awesome/css/all.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/lib/awesome/css/all.css'
+2019-12-19 17:12:06.420 +03:00 [INF] Request finished in 10.0304ms 200 text/css
+2019-12-19 17:12:06.420 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-19 17:12:06.425 +03:00 [INF] Request finished in 5.0881ms 404 
+2019-12-19 17:12:06.442 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+2019-12-19 17:12:06.444 +03:00 [INF] Sending file. Request path: '/css/open-iconic/font/css/open-iconic-bootstrap.min.css'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css'
+2019-12-19 17:12:06.445 +03:00 [INF] Request finished in 2.5951ms 200 text/css
+2019-12-19 17:12:06.450 +03:00 [INF] Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+2019-12-19 17:12:06.451 +03:00 [INF] Request finished in 36.7928ms 200 application/javascript
+2019-12-19 17:12:06.482 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/negotiate text/plain;charset=UTF-8 0
+2019-12-19 17:12:06.482 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_content/Microsoft.AspNetCore.ProtectedBrowserStorage/protectedBrowserStorage.js  
+2019-12-19 17:12:06.485 +03:00 [INF] Request finished in 2.6246ms 404 
+2019-12-19 17:12:06.498 +03:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwODEyODMyMywiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.mOHIoesGLG5K72B8lhgvZ4NkNEPVRyNscg2NpLw5jF8"
+2019-12-19 17:12:06.498 +03:00 [INF] Executing endpoint '/_blazor/negotiate'
+2019-12-19 17:12:06.505 +03:00 [INF] Executed endpoint '/_blazor/negotiate'
+2019-12-19 17:12:06.506 +03:00 [INF] Request finished in 23.837ms 200 application/json
+2019-12-19 17:12:06.686 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/open-iconic/font/fonts/open-iconic.woff  
+2019-12-19 17:12:06.698 +03:00 [INF] Sending file. Request path: '/css/open-iconic/font/fonts/open-iconic.woff'. Physical path: '/Users/nikita/Documents/projects/Jija/wwwroot/css/open-iconic/font/fonts/open-iconic.woff'
+2019-12-19 17:12:06.710 +03:00 [INF] Request finished in 22.1901ms 200 application/font-woff
+2019-12-19 17:12:06.778 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/_blazor?id=KcdsEwHuDxdn5KLi1ff8qA&access_token=%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlYmE2N2NmMy0zZjc3LTRiNTAtYWI1Yi00YjE5MzQwMzYyMDUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTYwODEyODMyMywiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEifQ.mOHIoesGLG5K72B8lhgvZ4NkNEPVRyNscg2NpLw5jF8%22  
+2019-12-19 17:12:06.948 +03:00 [INF] Successfully validated the token.
+2019-12-19 17:12:06.949 +03:00 [INF] Executing endpoint '/_blazor'
+2019-12-19 17:12:07.051 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:07.053 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:08.080 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:08.085 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:08.085 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:08.085 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:08.086 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:08.792 +03:00 [INF] Entity Framework Core 3.0.1 initialized 'DatabaseContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2019-12-19 17:12:13.474 +03:00 [INF] Executing DbCommand [Parameters=[@__authState_User_Identity_Name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AccessFailedCount", t."ConcurrencyStamp", t."Email", t."EmailConfirmed", t."LockoutEnabled", t."LockoutEnd", t."NormalizedEmail", t."NormalizedUserName", t."PasswordHash", t."PhoneNumber", t."PhoneNumberConfirmed", t."SecurityStamp", t."TwoFactorEnabled", t."UserName", t."Id0", t."AccessToken", t."AvatarUrl", t."HtmlUrl", t."Login", t."UserId", p."Id", p."Name", p."OwnerId", t0."Id", t0."Message", t0."ProjectId", t0."Status", t0."UserId", t0."Id0", t0."Name", t0."OwnerId", t0."Id1", t0."Description", t0."HtmlUrl", t0."Name0", t0."ProjectId0", t0."UserId0", r0."Id", r0."Description", r0."HtmlUrl", r0."Name", r0."ProjectId", r0."UserId", t1."ContributorId", t1."ProjectId", t1."Id", t1."Name", t1."OwnerId", t1."Id0", t1."Description", t1."HtmlUrl", t1."Name0", t1."ProjectId0", t1."UserId"
+FROM (
+    SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", g."Id" AS "Id0", g."AccessToken", g."AvatarUrl", g."HtmlUrl", g."Login", g."UserId"
+    FROM "AspNetUsers" AS a
+    LEFT JOIN "GithubUsers" AS g ON a."Id" = g."UserId"
+    WHERE ((a."UserName" = @__authState_User_Identity_Name_0) AND ((a."UserName" IS NOT NULL) AND (@__authState_User_Identity_Name_0 IS NOT NULL))) OR ((a."UserName" IS NULL) AND (@__authState_User_Identity_Name_0 IS NULL))
+    LIMIT 2
+) AS t
+LEFT JOIN "Projects" AS p ON t."Id" = p."OwnerId"
+LEFT JOIN (
+    SELECT i."Id", i."Message", i."ProjectId", i."Status", i."UserId", p0."Id" AS "Id0", p0."Name", p0."OwnerId", r."Id" AS "Id1", r."Description", r."HtmlUrl", r."Name" AS "Name0", r."ProjectId" AS "ProjectId0", r."UserId" AS "UserId0"
+    FROM "Invites" AS i
+    INNER JOIN "Projects" AS p0 ON i."ProjectId" = p0."Id"
+    LEFT JOIN "Repositories" AS r ON p0."Id" = r."ProjectId"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN "Repositories" AS r0 ON t."Id" = r0."UserId"
+LEFT JOIN (
+    SELECT p1."ContributorId", p1."ProjectId", p2."Id", p2."Name", p2."OwnerId", r1."Id" AS "Id0", r1."Description", r1."HtmlUrl", r1."Name" AS "Name0", r1."ProjectId" AS "ProjectId0", r1."UserId"
+    FROM "ProjectUsers" AS p1
+    INNER JOIN "Projects" AS p2 ON p1."ProjectId" = p2."Id"
+    LEFT JOIN "Repositories" AS r1 ON p2."Id" = r1."ProjectId"
+) AS t1 ON t."Id" = t1."ContributorId"
+ORDER BY t."Id", p."Id", t0."Id", t0."Id0", r0."Id", t1."ContributorId", t1."ProjectId", t1."Id"
+2019-12-19 17:12:16.681 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:16.683 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:16.683 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:16.683 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:16.684 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:16.788 +03:00 [INF] Executing DbCommand [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Name", t."OwnerId", t."Id0", t."AccessFailedCount", t."ConcurrencyStamp", t."Email", t."EmailConfirmed", t."LockoutEnabled", t."LockoutEnd", t."NormalizedEmail", t."NormalizedUserName", t."PasswordHash", t."PhoneNumber", t."PhoneNumberConfirmed", t."SecurityStamp", t."TwoFactorEnabled", t."UserName", t."Id1", t."Description", t."HtmlUrl", t."Name0", t."ProjectId", t."UserId", t0."Id", t0."Message", t0."ProjectId", t0."Status", t0."UserId", t0."Id0", t0."AccessFailedCount", t0."ConcurrencyStamp", t0."Email", t0."EmailConfirmed", t0."LockoutEnabled", t0."LockoutEnd", t0."NormalizedEmail", t0."NormalizedUserName", t0."PasswordHash", t0."PhoneNumber", t0."PhoneNumberConfirmed", t0."SecurityStamp", t0."TwoFactorEnabled", t0."UserName", t1."ContributorId", t1."ProjectId", t1."Id", t1."AccessFailedCount", t1."ConcurrencyStamp", t1."Email", t1."EmailConfirmed", t1."LockoutEnabled", t1."LockoutEnd", t1."NormalizedEmail", t1."NormalizedUserName", t1."PasswordHash", t1."PhoneNumber", t1."PhoneNumberConfirmed", t1."SecurityStamp", t1."TwoFactorEnabled", t1."UserName", t1."Id0", t1."AccessToken", t1."AvatarUrl", t1."HtmlUrl", t1."Login", t1."UserId", t4."Id", t4."Description", t4."Name", t4."ProjectId", t4."Status", t4."AssigneeId", t4."TicketId", t4."Id0", t4."AccessFailedCount", t4."ConcurrencyStamp", t4."Email", t4."EmailConfirmed", t4."LockoutEnabled", t4."LockoutEnd", t4."NormalizedEmail", t4."NormalizedUserName", t4."PasswordHash", t4."PhoneNumber", t4."PhoneNumberConfirmed", t4."SecurityStamp", t4."TwoFactorEnabled", t4."UserName"
+FROM (
+    SELECT p."Id", p."Name", p."OwnerId", a."Id" AS "Id0", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", r."Id" AS "Id1", r."Description", r."HtmlUrl", r."Name" AS "Name0", r."ProjectId", r."UserId"
+    FROM "Projects" AS p
+    LEFT JOIN "AspNetUsers" AS a ON p."OwnerId" = a."Id"
+    LEFT JOIN "Repositories" AS r ON p."Id" = r."ProjectId"
+    WHERE (p."Id" = @__id_0) AND (@__id_0 IS NOT NULL)
+    LIMIT 2
+) AS t
+LEFT JOIN (
+    SELECT i."Id", i."Message", i."ProjectId", i."Status", i."UserId", a0."Id" AS "Id0", a0."AccessFailedCount", a0."ConcurrencyStamp", a0."Email", a0."EmailConfirmed", a0."LockoutEnabled", a0."LockoutEnd", a0."NormalizedEmail", a0."NormalizedUserName", a0."PasswordHash", a0."PhoneNumber", a0."PhoneNumberConfirmed", a0."SecurityStamp", a0."TwoFactorEnabled", a0."UserName"
+    FROM "Invites" AS i
+    LEFT JOIN "AspNetUsers" AS a0 ON i."UserId" = a0."Id"
+) AS t0 ON t."Id" = t0."ProjectId"
+LEFT JOIN (
+    SELECT p0."ContributorId", p0."ProjectId", a1."Id", a1."AccessFailedCount", a1."ConcurrencyStamp", a1."Email", a1."EmailConfirmed", a1."LockoutEnabled", a1."LockoutEnd", a1."NormalizedEmail", a1."NormalizedUserName", a1."PasswordHash", a1."PhoneNumber", a1."PhoneNumberConfirmed", a1."SecurityStamp", a1."TwoFactorEnabled", a1."UserName", g."Id" AS "Id0", g."AccessToken", g."AvatarUrl", g."HtmlUrl", g."Login", g."UserId"
+    FROM "ProjectUsers" AS p0
+    INNER JOIN "AspNetUsers" AS a1 ON p0."ContributorId" = a1."Id"
+    LEFT JOIN "GithubUsers" AS g ON a1."Id" = g."UserId"
+) AS t1 ON t."Id" = t1."ProjectId"
+LEFT JOIN (
+    SELECT t2."Id", t2."Description", t2."Name", t2."ProjectId", t2."Status", t3."AssigneeId", t3."TicketId", t3."Id" AS "Id0", t3."AccessFailedCount", t3."ConcurrencyStamp", t3."Email", t3."EmailConfirmed", t3."LockoutEnabled", t3."LockoutEnd", t3."NormalizedEmail", t3."NormalizedUserName", t3."PasswordHash", t3."PhoneNumber", t3."PhoneNumberConfirmed", t3."SecurityStamp", t3."TwoFactorEnabled", t3."UserName"
+    FROM "Tickets" AS t2
+    LEFT JOIN (
+        SELECT a2."AssigneeId", a2."TicketId", a3."Id", a3."AccessFailedCount", a3."ConcurrencyStamp", a3."Email", a3."EmailConfirmed", a3."LockoutEnabled", a3."LockoutEnd", a3."NormalizedEmail", a3."NormalizedUserName", a3."PasswordHash", a3."PhoneNumber", a3."PhoneNumberConfirmed", a3."SecurityStamp", a3."TwoFactorEnabled", a3."UserName"
+        FROM "Assignees" AS a2
+        INNER JOIN "AspNetUsers" AS a3 ON a2."AssigneeId" = a3."Id"
+    ) AS t3 ON t2."Id" = t3."TicketId"
+) AS t4 ON t."Id" = t4."ProjectId"
+ORDER BY t."Id", t0."Id", t1."ContributorId", t1."ProjectId", t1."Id", t4."Id", t4."AssigneeId", t4."TicketId", t4."Id0"
+2019-12-19 17:12:17.157 +03:00 [INF] Executing DbCommand [Parameters=[@__authState_User_Identity_Name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", g."Id", g."AccessToken", g."AvatarUrl", g."HtmlUrl", g."Login", g."UserId"
+FROM "AspNetUsers" AS a
+LEFT JOIN "GithubUsers" AS g ON a."Id" = g."UserId"
+WHERE ((a."UserName" = @__authState_User_Identity_Name_0) AND ((a."UserName" IS NOT NULL) AND (@__authState_User_Identity_Name_0 IS NOT NULL))) OR ((a."UserName" IS NULL) AND (@__authState_User_Identity_Name_0 IS NULL))
+LIMIT 2
+2019-12-19 17:12:17.222 +03:00 [INF] Executing DbCommand [Parameters=[@__project_Id_0='?' (DbType = Int32), @__status_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Description", t."Name", t."ProjectId", t."Status"
+FROM "Tickets" AS t
+WHERE ((t."ProjectId" = @__project_Id_0) AND (@__project_Id_0 IS NOT NULL)) AND ((t."Status" = @__status_1) AND (@__status_1 IS NOT NULL))
+2019-12-19 17:12:17.273 +03:00 [INF] Executing DbCommand [Parameters=[@__project_Id_0='?' (DbType = Int32), @__status_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Description", t."Name", t."ProjectId", t."Status"
+FROM "Tickets" AS t
+WHERE ((t."ProjectId" = @__project_Id_0) AND (@__project_Id_0 IS NOT NULL)) AND ((t."Status" = @__status_1) AND (@__status_1 IS NOT NULL))
+2019-12-19 17:12:17.315 +03:00 [INF] Executing DbCommand [Parameters=[@__project_Id_0='?' (DbType = Int32), @__status_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Description", t."Name", t."ProjectId", t."Status"
+FROM "Tickets" AS t
+WHERE ((t."ProjectId" = @__project_Id_0) AND (@__project_Id_0 IS NOT NULL)) AND ((t."Status" = @__status_1) AND (@__status_1 IS NOT NULL))
+2019-12-19 17:12:18.592 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:18.595 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:18.596 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:18.597 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:18.602 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:18.631 +03:00 [INF] Executing DbCommand [Parameters=[@__authState_User_Identity_Name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."AccessFailedCount", t."ConcurrencyStamp", t."Email", t."EmailConfirmed", t."LockoutEnabled", t."LockoutEnd", t."NormalizedEmail", t."NormalizedUserName", t."PasswordHash", t."PhoneNumber", t."PhoneNumberConfirmed", t."SecurityStamp", t."TwoFactorEnabled", t."UserName", t."Id0", t."AccessToken", t."AvatarUrl", t."HtmlUrl", t."Login", t."UserId", p."Id", p."Name", p."OwnerId", t0."Id", t0."Message", t0."ProjectId", t0."Status", t0."UserId", t0."Id0", t0."Name", t0."OwnerId", t0."Id1", t0."Description", t0."HtmlUrl", t0."Name0", t0."ProjectId0", t0."UserId0", r0."Id", r0."Description", r0."HtmlUrl", r0."Name", r0."ProjectId", r0."UserId", t1."ContributorId", t1."ProjectId", t1."Id", t1."Name", t1."OwnerId", t1."Id0", t1."Description", t1."HtmlUrl", t1."Name0", t1."ProjectId0", t1."UserId"
+FROM (
+    SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", g."Id" AS "Id0", g."AccessToken", g."AvatarUrl", g."HtmlUrl", g."Login", g."UserId"
+    FROM "AspNetUsers" AS a
+    LEFT JOIN "GithubUsers" AS g ON a."Id" = g."UserId"
+    WHERE ((a."UserName" = @__authState_User_Identity_Name_0) AND ((a."UserName" IS NOT NULL) AND (@__authState_User_Identity_Name_0 IS NOT NULL))) OR ((a."UserName" IS NULL) AND (@__authState_User_Identity_Name_0 IS NULL))
+    LIMIT 2
+) AS t
+LEFT JOIN "Projects" AS p ON t."Id" = p."OwnerId"
+LEFT JOIN (
+    SELECT i."Id", i."Message", i."ProjectId", i."Status", i."UserId", p0."Id" AS "Id0", p0."Name", p0."OwnerId", r."Id" AS "Id1", r."Description", r."HtmlUrl", r."Name" AS "Name0", r."ProjectId" AS "ProjectId0", r."UserId" AS "UserId0"
+    FROM "Invites" AS i
+    INNER JOIN "Projects" AS p0 ON i."ProjectId" = p0."Id"
+    LEFT JOIN "Repositories" AS r ON p0."Id" = r."ProjectId"
+) AS t0 ON t."Id" = t0."UserId"
+LEFT JOIN "Repositories" AS r0 ON t."Id" = r0."UserId"
+LEFT JOIN (
+    SELECT p1."ContributorId", p1."ProjectId", p2."Id", p2."Name", p2."OwnerId", r1."Id" AS "Id0", r1."Description", r1."HtmlUrl", r1."Name" AS "Name0", r1."ProjectId" AS "ProjectId0", r1."UserId"
+    FROM "ProjectUsers" AS p1
+    INNER JOIN "Projects" AS p2 ON p1."ProjectId" = p2."Id"
+    LEFT JOIN "Repositories" AS r1 ON p2."Id" = r1."ProjectId"
+) AS t1 ON t."Id" = t1."ContributorId"
+ORDER BY t."Id", p."Id", t0."Id", t0."Id0", r0."Id", t1."ContributorId", t1."ProjectId", t1."Id"
+2019-12-19 17:12:19.558 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:19.559 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:19.559 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:19.561 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:19.563 +03:00 [INF] Authorization was successful.
+2019-12-19 17:12:19.584 +03:00 [INF] Executing DbCommand [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Name", t."OwnerId", t."Id0", t."AccessFailedCount", t."ConcurrencyStamp", t."Email", t."EmailConfirmed", t."LockoutEnabled", t."LockoutEnd", t."NormalizedEmail", t."NormalizedUserName", t."PasswordHash", t."PhoneNumber", t."PhoneNumberConfirmed", t."SecurityStamp", t."TwoFactorEnabled", t."UserName", t."Id1", t."Description", t."HtmlUrl", t."Name0", t."ProjectId", t."UserId", t0."Id", t0."Message", t0."ProjectId", t0."Status", t0."UserId", t0."Id0", t0."AccessFailedCount", t0."ConcurrencyStamp", t0."Email", t0."EmailConfirmed", t0."LockoutEnabled", t0."LockoutEnd", t0."NormalizedEmail", t0."NormalizedUserName", t0."PasswordHash", t0."PhoneNumber", t0."PhoneNumberConfirmed", t0."SecurityStamp", t0."TwoFactorEnabled", t0."UserName", t1."ContributorId", t1."ProjectId", t1."Id", t1."AccessFailedCount", t1."ConcurrencyStamp", t1."Email", t1."EmailConfirmed", t1."LockoutEnabled", t1."LockoutEnd", t1."NormalizedEmail", t1."NormalizedUserName", t1."PasswordHash", t1."PhoneNumber", t1."PhoneNumberConfirmed", t1."SecurityStamp", t1."TwoFactorEnabled", t1."UserName", t1."Id0", t1."AccessToken", t1."AvatarUrl", t1."HtmlUrl", t1."Login", t1."UserId", t4."Id", t4."Description", t4."Name", t4."ProjectId", t4."Status", t4."AssigneeId", t4."TicketId", t4."Id0", t4."AccessFailedCount", t4."ConcurrencyStamp", t4."Email", t4."EmailConfirmed", t4."LockoutEnabled", t4."LockoutEnd", t4."NormalizedEmail", t4."NormalizedUserName", t4."PasswordHash", t4."PhoneNumber", t4."PhoneNumberConfirmed", t4."SecurityStamp", t4."TwoFactorEnabled", t4."UserName"
+FROM (
+    SELECT p."Id", p."Name", p."OwnerId", a."Id" AS "Id0", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", r."Id" AS "Id1", r."Description", r."HtmlUrl", r."Name" AS "Name0", r."ProjectId", r."UserId"
+    FROM "Projects" AS p
+    LEFT JOIN "AspNetUsers" AS a ON p."OwnerId" = a."Id"
+    LEFT JOIN "Repositories" AS r ON p."Id" = r."ProjectId"
+    WHERE (p."Id" = @__id_0) AND (@__id_0 IS NOT NULL)
+    LIMIT 2
+) AS t
+LEFT JOIN (
+    SELECT i."Id", i."Message", i."ProjectId", i."Status", i."UserId", a0."Id" AS "Id0", a0."AccessFailedCount", a0."ConcurrencyStamp", a0."Email", a0."EmailConfirmed", a0."LockoutEnabled", a0."LockoutEnd", a0."NormalizedEmail", a0."NormalizedUserName", a0."PasswordHash", a0."PhoneNumber", a0."PhoneNumberConfirmed", a0."SecurityStamp", a0."TwoFactorEnabled", a0."UserName"
+    FROM "Invites" AS i
+    LEFT JOIN "AspNetUsers" AS a0 ON i."UserId" = a0."Id"
+) AS t0 ON t."Id" = t0."ProjectId"
+LEFT JOIN (
+    SELECT p0."ContributorId", p0."ProjectId", a1."Id", a1."AccessFailedCount", a1."ConcurrencyStamp", a1."Email", a1."EmailConfirmed", a1."LockoutEnabled", a1."LockoutEnd", a1."NormalizedEmail", a1."NormalizedUserName", a1."PasswordHash", a1."PhoneNumber", a1."PhoneNumberConfirmed", a1."SecurityStamp", a1."TwoFactorEnabled", a1."UserName", g."Id" AS "Id0", g."AccessToken", g."AvatarUrl", g."HtmlUrl", g."Login", g."UserId"
+    FROM "ProjectUsers" AS p0
+    INNER JOIN "AspNetUsers" AS a1 ON p0."ContributorId" = a1."Id"
+    LEFT JOIN "GithubUsers" AS g ON a1."Id" = g."UserId"
+) AS t1 ON t."Id" = t1."ProjectId"
+LEFT JOIN (
+    SELECT t2."Id", t2."Description", t2."Name", t2."ProjectId", t2."Status", t3."AssigneeId", t3."TicketId", t3."Id" AS "Id0", t3."AccessFailedCount", t3."ConcurrencyStamp", t3."Email", t3."EmailConfirmed", t3."LockoutEnabled", t3."LockoutEnd", t3."NormalizedEmail", t3."NormalizedUserName", t3."PasswordHash", t3."PhoneNumber", t3."PhoneNumberConfirmed", t3."SecurityStamp", t3."TwoFactorEnabled", t3."UserName"
+    FROM "Tickets" AS t2
+    LEFT JOIN (
+        SELECT a2."AssigneeId", a2."TicketId", a3."Id", a3."AccessFailedCount", a3."ConcurrencyStamp", a3."Email", a3."EmailConfirmed", a3."LockoutEnabled", a3."LockoutEnd", a3."NormalizedEmail", a3."NormalizedUserName", a3."PasswordHash", a3."PhoneNumber", a3."PhoneNumberConfirmed", a3."SecurityStamp", a3."TwoFactorEnabled", a3."UserName"
+        FROM "Assignees" AS a2
+        INNER JOIN "AspNetUsers" AS a3 ON a2."AssigneeId" = a3."Id"
+    ) AS t3 ON t2."Id" = t3."TicketId"
+) AS t4 ON t."Id" = t4."ProjectId"
+ORDER BY t."Id", t0."Id", t1."ContributorId", t1."ProjectId", t1."Id", t4."Id", t4."AssigneeId", t4."TicketId", t4."Id0"
+2019-12-19 17:12:19.676 +03:00 [INF] Executing DbCommand [Parameters=[@__authState_User_Identity_Name_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."Email", a."EmailConfirmed", a."LockoutEnabled", a."LockoutEnd", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TwoFactorEnabled", a."UserName", g."Id", g."AccessToken", g."AvatarUrl", g."HtmlUrl", g."Login", g."UserId"
+FROM "AspNetUsers" AS a
+LEFT JOIN "GithubUsers" AS g ON a."Id" = g."UserId"
+WHERE ((a."UserName" = @__authState_User_Identity_Name_0) AND ((a."UserName" IS NOT NULL) AND (@__authState_User_Identity_Name_0 IS NOT NULL))) OR ((a."UserName" IS NULL) AND (@__authState_User_Identity_Name_0 IS NULL))
+LIMIT 2
+2019-12-19 17:12:19.726 +03:00 [INF] Executing DbCommand [Parameters=[@__project_Id_0='?' (DbType = Int32), @__status_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Description", t."Name", t."ProjectId", t."Status"
+FROM "Tickets" AS t
+WHERE ((t."ProjectId" = @__project_Id_0) AND (@__project_Id_0 IS NOT NULL)) AND ((t."Status" = @__status_1) AND (@__status_1 IS NOT NULL))
+2019-12-19 17:12:19.774 +03:00 [INF] Executing DbCommand [Parameters=[@__project_Id_0='?' (DbType = Int32), @__status_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Description", t."Name", t."ProjectId", t."Status"
+FROM "Tickets" AS t
+WHERE ((t."ProjectId" = @__project_Id_0) AND (@__project_Id_0 IS NOT NULL)) AND ((t."Status" = @__status_1) AND (@__status_1 IS NOT NULL))
+2019-12-19 17:12:19.820 +03:00 [INF] Executing DbCommand [Parameters=[@__project_Id_0='?' (DbType = Int32), @__status_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Description", t."Name", t."ProjectId", t."Status"
+FROM "Tickets" AS t
+WHERE ((t."ProjectId" = @__project_Id_0) AND (@__project_Id_0 IS NOT NULL)) AND ((t."Status" = @__status_1) AND (@__status_1 IS NOT NULL))
+2019-12-19 17:12:22.467 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:5001/_blazor/disconnect multipart/form-data; boundary=----WebKitFormBoundaryoh2aENB8xxTYeycF 359
+2019-12-19 17:12:22.473 +03:00 [INF] Executing endpoint 'Blazor disconnect'
+2019-12-19 17:12:22.481 +03:00 [INF] Executed endpoint '/_blazor'
+2019-12-19 17:12:22.483 +03:00 [INF] Request finished in 15705.3801ms 101 
+2019-12-19 17:12:22.519 +03:00 [INF] Executed endpoint 'Blazor disconnect'
+2019-12-19 17:12:22.523 +03:00 [INF] Request finished in 54.8695ms 200 
